@@ -162,13 +162,12 @@ function CategorySelect() {
             textWrap: "nowrap",
           }}
         >
-          <Box>
+          <Box sx={{ marginX: "0.25rem" }}>
             <Button 
               onClick={handleMoviesButtonClick}
               sx={{
-                border: "1px solid white", // add a white border to the button
-                borderRadius: "5px", // add rounded corners to the button
-                padding: "10px", // add some padding to the button
+                border: "1px solid white",
+                borderRadius: "5px"
               }}
               >
               <Typography
@@ -178,19 +177,17 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
                 Movies
               </Typography>
             </Button>
           </Box>
-          <Box marginLeft={"5%"}>
+          <Box sx={{ marginX: "0.25rem" }}>
             <Button 
               onClick={handleTvShowsButtonClick}
               sx={{
-                border: "1px solid white", // add a white border to the button
-                borderRadius: "5px", // add rounded corners to the button
-                padding: "10px", // add some padding to the button
+                border: "1px solid white",
+                borderRadius: "5px"
               }}
               >
               <Typography
@@ -200,19 +197,17 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
                 Shows
               </Typography>
             </Button>
           </Box>
-          <Box marginLeft={"5%"}>
+          <Box sx={{ marginX: "0.25rem" }}>
             <Button 
               onClick={handleSportsButtonClick}
               sx={{
-                border: "1px solid white", // add a white border to the button
-                borderRadius: "5px", // add rounded corners to the button
-                padding: "10px", // add some padding to the button
+                border: "1px solid white",
+                borderRadius: "5px"
               }}
               >
               <Typography
@@ -222,21 +217,19 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
                 Sports
               </Typography>
             </Button>
           </Box>
-          <Box marginLeft={"5%"}>
+          <Box sx={{ marginX: "0.25rem" }}>
             <Button 
-            onClick={handleGKButtonClick}
-            sx={{
-              border: "1px solid white", // add a white border to the button
-              borderRadius: "5px", // add rounded corners to the button
-              padding: "10px", // add some padding to the button
-            }}
-            >
+              onClick={handleGKButtonClick}
+              sx={{
+                border: "1px solid white",
+                borderRadius: "5px"
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -244,14 +237,13 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
                 GK
               </Typography>
             </Button>
           </Box>
         </Box>
-        <Typography
+        {/* <Typography
           sx={{
             fontWeight: "bolder",
             fontFamily: "Gralliec",
@@ -307,7 +299,7 @@ function CategorySelect() {
               Cricket
             </Typography>
           </Button>
-        </Box>
+        </Box> */}
         <Dialog
           open={openDialog}
           onClose={handleCloseDialog}

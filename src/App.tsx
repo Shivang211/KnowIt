@@ -6,8 +6,6 @@ import { GameRoom } from "./pages/GameRoom";
 import { GameStartPage } from "./pages/GameStartPage";
 import HomePage from "./pages/Homepage";
 import { JoinRoomPage } from "./pages/JoinRoomPage";
-import { QuestionPage } from "./pages/QuestionPage";
-import ScorePage from "./pages/ScorePage";
 
 function App() {
   return (

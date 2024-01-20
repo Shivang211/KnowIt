@@ -198,41 +198,64 @@ function CategorySelect() {
           }}
         >
           <Button
-            variant="contained"
+            variant="text"
             sx={{
-              borderRadius: "50%",
               height: "75px",
               margin: "auto",
-              backgroundColor: "#4cc9f0",
             }}
           >
             <Typography
-              sx={{ fontWeight: "bolder", color: "white", marginTop: "10%" }}
+              sx={{
+                fontWeight: "bolder",
+                marginTop: "10%",
+                fontFamily: "Gralliec",
+                color: "#4cc9f0",
+              }}
+              variant="h3"
               gutterBottom
             >
               Friends
             </Typography>
           </Button>
           <Button
-            variant="contained"
+            variant="text"
             sx={{
-              borderRadius: "50%",
               height: "75px",
               margin: "auto",
-              backgroundColor: "orange",
             }}
           >
-            <Typography sx={{ fontWeight: "bolder" }}>Cricket</Typography>
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                marginTop: "10%",
+                fontFamily: "Gralliec",
+                color: "orange",
+              }}
+              variant="h3"
+              gutterBottom
+            >
+              Cricket
+            </Typography>
           </Button>
         </Box>
-        <Dialog open={openDialog} onClose={handleCloseDialog} style={{ textAlign: 'center' }}>
-          <DialogTitle><Typography sx={{
-            fontWeight: "bolder",
-            fontFamily: "Gralliec",
-            color: "orange",
-          }}
-          variant={"h4"}
-          gutterBottom>Pick a Movie:</Typography></DialogTitle>
+        <Dialog
+          open={openDialog}
+          onClose={handleCloseDialog}
+          style={{ textAlign: "center" }}
+        >
+          <DialogTitle>
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                fontFamily: "Gralliec",
+                color: "orange",
+              }}
+              variant={"h4"}
+              gutterBottom
+            >
+              Pick a Movie:
+            </Typography>
+          </DialogTitle>
           <List>
             {/* Replace these placeholders with actual movie names */}
             <ListItem>
@@ -242,7 +265,7 @@ function CategorySelect() {
                     fontWeight: "bolder",
                     fontFamily: "Gralliec",
                     color: "#4cc9f0",
-                    marginLeft:"10%"
+                    marginLeft: "10%",
                   }}
                   variant={"h4"}
                   gutterBottom
@@ -253,52 +276,51 @@ function CategorySelect() {
               </ListItemButton>
             </ListItem>
             <ListItem>
-            <ListItemButton>
-              <Typography
-                sx={{
-                  fontWeight: "bolder",
-                  fontFamily: "Gralliec",
-                  color: "red",
-                  marginLeft:"0%"
-                }}
-                variant={"h4"}
-                gutterBottom
-              >
-                Batman Trilogy
-              </Typography>
+              <ListItemButton>
+                <Typography
+                  sx={{
+                    fontWeight: "bolder",
+                    fontFamily: "Gralliec",
+                    color: "red",
+                    marginLeft: "0%",
+                  }}
+                  variant={"h4"}
+                  gutterBottom
+                >
+                  Batman Trilogy
+                </Typography>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding>
-            <ListItemButton>
-              <Typography
-                sx={{
-                  fontWeight: "bolder",
-                  fontFamily: "Gralliec",
-                  color: "#4cc9f0",
-                  marginLeft:"30%"
-                }}
-                variant={"h4"}
-                gutterBottom
-              >
-                Marvel
-              </Typography>
+              <ListItemButton>
+                <Typography
+                  sx={{
+                    fontWeight: "bolder",
+                    fontFamily: "Gralliec",
+                    color: "#4cc9f0",
+                    marginLeft: "30%",
+                  }}
+                  variant={"h4"}
+                  gutterBottom
+                >
+                  Marvel
+                </Typography>
               </ListItemButton>
             </ListItem>
-            <ListItem >
-            <ListItemButton>
-              <Typography
-                sx={{
-                  fontWeight: "bolder",
-                  fontFamily: "Gralliec",
-                  color: "red",
-                  marginLeft:"30%"
-                  
-                }}
-                variant={"h4"}
-                gutterBottom
-              >
-                Disney
-              </Typography>
+            <ListItem>
+              <ListItemButton>
+                <Typography
+                  sx={{
+                    fontWeight: "bolder",
+                    fontFamily: "Gralliec",
+                    color: "red",
+                    marginLeft: "30%",
+                  }}
+                  variant={"h4"}
+                  gutterBottom
+                >
+                  Disney
+                </Typography>
               </ListItemButton>
             </ListItem>
           </List>

@@ -19,15 +19,13 @@ function ScorePage() {
     align: "center",
   };
 
-  return (
-    <div style={{ backgroundColor: "purple", height: "100vh" }}>
-      <Box sx={{ alignContent: "center" }}>
-        <Typography
-          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
-          variant={"h1"}
-          gutterBottom
-        >
-          KnowIt
+
+    return(
+      <div style={{height:'100vh'}}>
+        <Box sx={{alignContent:'center'}} >
+        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h1"} gutterBottom>
+        KnowIt
+
         </Typography>
         <Typography
           sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}

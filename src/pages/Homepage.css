@@ -8,8 +8,6 @@
 .cartoon-container::after {
   content: "";
   position: absolute;
-  width: 0px; /* Adjust the width of the squiggly lines */
-  height: 0px; /* Adjust the height of the squiggly lines */ /* Adjust the color of the squiggly lines */
 }
 
 .cartoon-container::before {

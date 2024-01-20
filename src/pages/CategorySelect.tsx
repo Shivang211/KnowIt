@@ -8,7 +8,6 @@ import {
   ListItem,
   ListItemButton,
   ListItemText,
-  MovieIcon,
   TextField,
   Typography,
 } from "@mui/material";

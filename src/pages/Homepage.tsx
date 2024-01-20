@@ -79,7 +79,8 @@ function Homepage() {
           <DialogContent>
             <DialogContentText>
               {/* Add your instructions or information about how to play */}
-              Replace this text with your instructions.
+             Ever thought you will do amazing on Jeopardy? Let's get to KnowIt. Play this with your friends and see your expertise in your favorite topics. Just begin by entering your username.
+            Choose a category you wanna play, and you're all set. You will be prompted questions and you will 
             </DialogContentText>
           </DialogContent>
           <DialogActions>

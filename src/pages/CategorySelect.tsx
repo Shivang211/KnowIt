@@ -3,6 +3,8 @@ import {
   Button,
   Container,
   Dialog,
+  DialogActions,
+  DialogContent,
   DialogTitle,
   List,
   Typography,
@@ -11,6 +13,23 @@ import { generate } from "random-words";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import himymLogo from "../assets/HIMYMIcon.jpeg";
+import badmintonLogo from "../assets/badmintonIcon.png";
+import batmanLogo from "../assets/batmanIcon.svg";
+import billionsLogo from "../assets/billionsIcon.png";
+import breakingBadLogo from "../assets/breakingbadIcon.jpeg";
+import cricketLogo from "../assets/cricketIcon.png";
+import disneyLogo from "../assets/disney.svg";
+import friendsLogo from "../assets/friendsIcon.jpeg";
+import gameOfThronesLogo from "../assets/gameOfThrones.png";
+import harryPotterLogo from "../assets/harryIcon.svg";
+import marvelLogo from "../assets/marvelIcon.svg";
+import olympicsLogo from "../assets/olympicsIcon.png";
+import soccerLogo from "../assets/soccerIcon.png";
+import suitsLogo from "../assets/suits.png";
+import worldMonumentsLogo from "../assets/tajMahalIcon.jpeg";
+import whoAmILogo from "../assets/whoAmIIcon.jpeg";
+import worldHistoryLogo from "../assets/worldHistoryIcon.png";
 import { CustomButton } from "../components/CustomButton";
 import "./CategorySelect.css";
 
@@ -143,8 +162,14 @@ function CategorySelect() {
             textWrap: "nowrap",
           }}
         >
-          <Box>
-            <Button onClick={handleMoviesButtonClick}>
+          <Box sx={{ marginX: "0.25rem" }}>
+            <Button 
+              onClick={handleMoviesButtonClick}
+              sx={{
+                border: "1px solid white",
+                borderRadius: "5px"
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -152,14 +177,19 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
                 Movies
               </Typography>
             </Button>
           </Box>
-          <Box marginLeft={"5%"}>
-            <Button onClick={handleTvShowsButtonClick}>
+          <Box sx={{ marginX: "0.25rem" }}>
+            <Button 
+              onClick={handleTvShowsButtonClick}
+              sx={{
+                border: "1px solid white",
+                borderRadius: "5px"
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -167,14 +197,19 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
-                Tv Shows
+                Shows
               </Typography>
             </Button>
           </Box>
-          <Box marginLeft={"5%"}>
-            <Button onClick={handleSportsButtonClick}>
+          <Box sx={{ marginX: "0.25rem" }}>
+            <Button 
+              onClick={handleSportsButtonClick}
+              sx={{
+                border: "1px solid white",
+                borderRadius: "5px"
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -182,14 +217,19 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
                 Sports
               </Typography>
             </Button>
           </Box>
-          <Box marginLeft={"5%"}>
-            <Button onClick={handleGKButtonClick}>
+          <Box sx={{ marginX: "0.25rem" }}>
+            <Button 
+              onClick={handleGKButtonClick}
+              sx={{
+                border: "1px solid white",
+                borderRadius: "5px"
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -197,14 +237,13 @@ function CategorySelect() {
                   color: "white",
                 }}
                 variant={"h4"}
-                gutterBottom
               >
                 GK
               </Typography>
             </Button>
           </Box>
         </Box>
-        <Typography
+        {/* <Typography
           sx={{
             fontWeight: "bolder",
             fontFamily: "Gralliec",
@@ -260,11 +299,19 @@ function CategorySelect() {
               Cricket
             </Typography>
           </Button>
-        </Box>
+        </Box> */}
         <Dialog
           open={openDialog}
           onClose={handleCloseDialog}
-          style={{ textAlign: "center" }}
+          PaperProps={{
+            style: {
+              backgroundColor: "#1a1a1a",
+              color: "#b3b3b3",
+              borderRadius: "10px",
+              boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
+              backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",
+            },
+          }}
         >
           <DialogTitle>
             <Typography
@@ -279,30 +326,59 @@ function CategorySelect() {
               Pick a Movie:
             </Typography>
           </DialogTitle>
-          <List>
-            {/* Replace these placeholders with actual movie names */}
-            <CustomButton
-              color="red"
-              content="Harry Potter"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="#4cc9f0"
-              content="Batman Trilogy"
-              callback={handleClick}
-            />
-            <CustomButton color="red" content="Marvel" callback={handleClick} />
-            <CustomButton
-              color="#4cc9f0"
-              content="Disney"
-              callback={handleClick}
-            />
-          </List>
+          <DialogContent>
+            <List>
+              {/* Replace these placeholders with actual movie names */}
+              <CustomButton
+                color="red"
+                content="Harry Potter"
+                callback={handleClick}
+                imageSource={harryPotterLogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="Batman Trilogy"
+                callback={handleClick}
+                imageSource={batmanLogo}
+              />
+              <CustomButton
+                color="red"
+                content="Marvel"
+                callback={handleClick}
+                imageSource={marvelLogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="Disney"
+                callback={handleClick}
+                imageSource={disneyLogo}
+              />
+            </List>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleCloseDialog}
+              sx={{
+                color: "#000000",
+                borderColor: "#b3b3b3",
+              }}
+            >
+              Close
+            </Button>
+          </DialogActions>
         </Dialog>
         <Dialog
           open={openTvShowsDialog}
           onClose={handleCloseTvShowsDialog}
-          style={{ textAlign: "center" }}
+          PaperProps={{
+            style: {
+              backgroundColor: "#1a1a1a",
+              color: "#b3b3b3",
+              borderRadius: "10px",
+              boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
+              backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",
+            },
+          }}
         >
           <DialogTitle>
             <Typography
@@ -317,39 +393,70 @@ function CategorySelect() {
               Pick a TV Show:
             </Typography>
           </DialogTitle>
-          <List>
-            <CustomButton color="red" content="SUITS" callback={handleClick} />
-            <CustomButton
-              color="#4cc9f0"
-              content="BILLIONS"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="red"
-              content="FRIENDS"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="#4cc9f0"
-              content="BREAKING BAD"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="red"
-              content="GAME OF THRONES"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="#4cc9f0"
-              content="HOW I MET YOUR MOTHER"
-              callback={handleClick}
-            />
-          </List>
+          <DialogContent>
+            <List>
+              <CustomButton
+                color="red"
+                content="SUITS"
+                callback={handleClick}
+                imageSource={suitsLogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="BILLIONS"
+                callback={handleClick}
+                imageSource={billionsLogo}
+              />
+              <CustomButton
+                color="red"
+                content="FRIENDS"
+                callback={handleClick}
+                imageSource={friendsLogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="BREAKING BAD"
+                callback={handleClick}
+                imageSource={breakingBadLogo}
+              />
+              <CustomButton
+                color="red"
+                content="GAME OF THRONES"
+                callback={handleClick}
+                imageSource={gameOfThronesLogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="HOW I MET YOUR MOTHER"
+                callback={handleClick}
+                imageSource={himymLogo}
+              />
+            </List>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleCloseTvShowsDialog}
+              sx={{
+                color: "#000000",
+                borderColor: "#b3b3b3",
+              }}
+            >
+              Close
+            </Button>
+          </DialogActions>
         </Dialog>
         <Dialog
           open={openSportsDialog}
           onClose={handleCloseSportsDialog}
-          style={{ textAlign: "center" }}
+          PaperProps={{
+            style: {
+              backgroundColor: "#1a1a1a",
+              color: "#b3b3b3",
+              borderRadius: "10px",
+              boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
+              backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",
+            },
+          }}
         >
           <DialogTitle>
             <Typography
@@ -364,29 +471,58 @@ function CategorySelect() {
               Pick a Sport:
             </Typography>
           </DialogTitle>
-          <List>
-            <CustomButton color="red" content="SOCCER" callback={handleClick} />
-            <CustomButton
-              color="#4cc9f0"
-              content="CRICKET"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="red"
-              content="BADMINTON"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="#4cc9f0"
-              content="OLYMPICS"
-              callback={handleClick}
-            />
-          </List>
+          <DialogContent sx={{ paddingRight: "4rem" }}>
+            <List>
+              <CustomButton
+                color="red"
+                content="SOCCER"
+                callback={handleClick}
+                imageSource={soccerLogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="CRICKET"
+                callback={handleClick}
+                imageSource={cricketLogo}
+              />
+              <CustomButton
+                color="red"
+                content="BADMINTON"
+                callback={handleClick}
+                imageSource={badmintonLogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="OLYMPICS"
+                callback={handleClick}
+                imageSource={olympicsLogo}
+              />
+            </List>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleCloseSportsDialog}
+              sx={{
+                color: "#000000",
+                borderColor: "#b3b3b3",
+              }}
+            >
+              Close
+            </Button>
+          </DialogActions>
         </Dialog>
         <Dialog
           open={openGKDialog}
           onClose={handleCloseGKDialog}
-          style={{ textAlign: "center" }}
+          PaperProps={{
+            style: {
+              backgroundColor: "#1a1a1a",
+              color: "#b3b3b3",
+              borderRadius: "10px",
+              boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
+              backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",
+            },
+          }}
         >
           <DialogTitle>
             <Typography
@@ -401,23 +537,39 @@ function CategorySelect() {
               Pick a Topic:
             </Typography>
           </DialogTitle>
-          <List>
-            <CustomButton
-              color="red"
-              content="WHO AM I?"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="#4cc9f0"
-              content="WORLD HISTORY"
-              callback={handleClick}
-            />
-            <CustomButton
-              color="red"
-              content="WORLD MONUMENTS"
-              callback={handleClick}
-            />
-          </List>
+          <DialogContent>
+            <List>
+              <CustomButton
+                color="red"
+                content="WHO AM I?"
+                callback={handleClick}
+                imageSource={whoAmILogo}
+              />
+              <CustomButton
+                color="#4cc9f0"
+                content="WORLD HISTORY"
+                callback={handleClick}
+                imageSource={worldHistoryLogo}
+              />
+              <CustomButton
+                color="red"
+                content="WORLD MONUMENTS"
+                callback={handleClick}
+                imageSource={worldMonumentsLogo}
+              />
+            </List>
+          </DialogContent>
+          <DialogActions>
+            <Button
+              onClick={handleCloseGKDialog}
+              sx={{
+                color: "#000000",
+                borderColor: "#b3b3b3",
+              }}
+            >
+              Close
+            </Button>
+          </DialogActions>
         </Dialog>
       </div>
     </Container>

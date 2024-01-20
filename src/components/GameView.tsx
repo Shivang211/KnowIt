@@ -1,9 +1,7 @@
-import { Box, Stack, Typography } from "@mui/material";
-
 import Timer from "../components/Timer";
-import QuestionTransition from "./QuestionTransition";
 import { QuestionPage } from "../pages/QuestionPage";
 import ScorePage from "../pages/ScorePage";
+import QuestionTransition from "./QuestionTransition";
 
 interface Player {
   id: string;
@@ -44,7 +42,7 @@ const GameView = ({
 }) => {
   console.log(gameState);
   const socketId = localStorage.getItem("socketId");
-  const playerInfo = gameState.players
+  const playerInfo = gameState.players;
   const questionRoundStatus = gameState.questionRoundStatus;
   return (
     <>

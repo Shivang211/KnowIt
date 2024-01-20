@@ -1,8 +1,17 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
-export function QuestionPage({ question,questionNo, answer, setAnswer }: { question: string; questionNo: string; answer: string; setAnswer: (_: string) => void }) {
-
+export function QuestionPage({
+  question,
+  questionNo,
+  answer,
+  setAnswer,
+}: {
+  question: string;
+  questionNo: string;
+  answer: string;
+  setAnswer: (_: string) => void;
+}) {
   function handleInputChange(event: { target: { value: any } }) {
     const value = event.target.value;
     setAnswer(value);

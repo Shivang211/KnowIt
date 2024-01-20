@@ -10,7 +10,17 @@ import {
   Typography,
 } from "@mui/material";
 
-function ScorePage({user1,user2,score1,score2}:{user1:string,user2:string,score1:number,score2:number}) {
+function ScorePage({
+  user1,
+  user2,
+  score1,
+  score2,
+}: {
+  user1: string;
+  user2: string;
+  score1: number;
+  score2: number;
+}) {
   const styles = {
     fontSize: "25px",
     padding: "5%",

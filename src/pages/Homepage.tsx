@@ -1,9 +1,12 @@
-import { Button, Container, Typography, TextField, Box } from "@mui/material";
-import React, { useState } from 'react';
-import "./Homepage.css"; // Import a separate CSS file for styling
+import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import React, { useState } from "react";
+
+import "./Homepage.css";
+
+// Import a separate CSS file for styling
 
 function Homepage() {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
   const [isError, setIsError] = useState(false);
 
   const containerStyle = {
@@ -11,27 +14,43 @@ function Homepage() {
     padding: "20px", // Add padding as needed
   };
 
-  const handleInputChange = (event: { target: { value: any; }; }) => {
+  const handleInputChange = (event: { target: { value: any } }) => {
     const value = event.target.value;
     setUsername(value);
-    setIsError(value.trim() === ''); // Set isError to true if the input is empty
+    setIsError(value.trim() === ""); // Set isError to true if the input is empty
   };
 
   const handleConfirmClick = () => {
     // Add your logic to handle form submission here
     if (!isError) {
       // Only proceed if the input is not empty
-      console.log('Username:', username);
+      console.log("Username:", username);
     }
   };
 
   return (
     <Container style={containerStyle}>
       <div className="cartoon-container">
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h4"} gutterBottom marginTop={"100%"}>
-          Do you 
+        <Typography
+          sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }}
+          variant={"h4"}
+          gutterBottom
+          marginTop={"100%"}
+        >
+          Do you
           <div className="bouncing-text">
-            <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", whiteSpace: "nowrap", display: "flex", flexDirection: "row", letterSpacing: "0.02em", color:"#4cc9f0"  }} variant={"h1"}>
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                fontFamily: "Gralliec",
+                whiteSpace: "nowrap",
+                display: "flex",
+                flexDirection: "row",
+                letterSpacing: "0.02em",
+                color: "#4cc9f0",
+              }}
+              variant={"h1"}
+            >
               <div className="x">K</div>
               <div className="y">n</div>
               <div className="z">o</div>
@@ -53,10 +72,19 @@ function Homepage() {
           onChange={handleInputChange}
           sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
         />
-        {isError && <Typography sx={{ color: 'red' }}>Username cannot be empty</Typography>}
+        {isError && (
+          <Typography sx={{ color: "red" }}>
+            Username cannot be empty
+          </Typography>
+        )}
         <br />
 
-        <Button sx={{ marginTop: "15%" }} variant="contained" onClick={handleConfirmClick} disabled={isError}>
+        <Button
+          sx={{ marginTop: "15%" }}
+          variant="contained"
+          onClick={handleConfirmClick}
+          disabled={isError}
+        >
           Confirm
         </Button>
       </div>

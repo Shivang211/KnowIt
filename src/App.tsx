@@ -1,9 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 
+import CategorySelect from "./pages/CategorySelect";
 import HomePage from "./pages/Homepage";
 import ScorePage from "./pages/ScorePage";
-import CategorySelect from "./pages/CategorySelect";
-
 
 function App() {
   return (

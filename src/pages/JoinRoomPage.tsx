@@ -1,6 +1,7 @@
 import { Button, Container, Typography, TextField} from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./Homepage.css";
 
 export function JoinRoomPage(){
 
@@ -39,15 +40,15 @@ export function JoinRoomPage(){
               Do you 
               <div className="bouncing-text">
                 <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", whiteSpace: "nowrap", display: "flex", flexDirection: "row", letterSpacing:"0.02rem" }} variant={"h1"}>
-                  <div className="b">K</div>
-                  <div className="o">n</div>
-                  <div className="u">o</div>
-                  <div className="n">w</div>
-                  <div className="c">I</div>
-                  <div className="e">t</div>
-                  <div className="f">?</div>
-                  <div className="shadow"></div>
-                  <div className="shadow-two"></div>
+                <div className="x">K</div>
+              <div className="y">n</div>
+              <div className="z">o</div>
+              <div className="a">w</div>
+              <div className="m">I</div>
+              <div className="p">t</div>
+              <div className="q">?</div>
+              <div className="shadow"></div>
+              <div className="shadow-two"></div>
                 </Typography>
               </div>
             </Typography>
@@ -77,7 +78,7 @@ export function JoinRoomPage(){
               </Typography >
             </Button>
             <br/>
-            <Button sx={{ marginTop: "15%" }} variant="contained" onClick={handleBackClick}>
+            <Button sx={{ marginTop: "15%", backgroundColor:"orange" }} variant="contained" onClick={handleBackClick}>
               <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", letterSpacing:"0.09rem"}}  variant={"h5"}>
               Back
               </Typography >

@@ -14,8 +14,7 @@ export function GameStartPage() {
             display: "flex",
             flexDirection: "row",
             letterSpacing: "0.02em",
-            marginLeft: "40%",
-            // marginRight: "auto",
+            justifyContent: "center",
             textAlign: "center"
           }}
           variant={"h1"}

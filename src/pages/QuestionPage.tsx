@@ -22,8 +22,7 @@ export function QuestionPage() {
             display: "flex",
             flexDirection: "row",
             letterSpacing: "0.02em",
-            marginLeft: "44%",
-            marginRight: "auto",
+            justifyContent: "center",
             textAlign: "center"
           }}
           variant={"h1"}

@@ -66,6 +66,19 @@ export function GameRoom() {
     );
   };
 
+  const inputResponse = ({ answer }) => {
+    socket.emit("player-answer", {
+      name: name, 
+      room: id, 
+      questionID: gameState.questions[gameState.currentQuestionNo - 1].id,
+      answer: answer
+    },
+    ({ games, error }) => {
+      if (error !== undefined) alert(error);
+    })
+  }
+
+
   return (
     <>
       <Typography
@@ -114,12 +127,13 @@ export function GameRoom() {
               playerAnswer={playerAnswer}
               setPlayerAnswer={setPlayerAnswer}
               gameState={gameState}
+              inputResponse={inputResponse}
             />
           )}
           {gameStatus === "ended" && (
             <>
-            {localStorage.clear()}
-            <FinalScore />
+            <FinalScore user1={gameState.players[0].name} user2={gameState.players[1].name} score1={gameState.players[0].score}
+        score2={gameState.players[1].score}/>
             </>
           )}
         </>

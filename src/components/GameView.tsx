@@ -35,10 +35,12 @@ const GameView = ({
   playerAnswer,
   setPlayerAnswer,
   gameState,
+  inputResponse
 }: {
   playerAnswer: string;
   setPlayerAnswer: (_: string) => void;
   gameState: any;
+  inputResponse: ({answer}: { answer: string }) => void;
 }) => {
   console.log(gameState);
   const socketId = localStorage.getItem("socketId");
@@ -56,12 +58,14 @@ const GameView = ({
         <>
           <Timer duration={gameState.duration} />
           <QuestionPage question={gameState.questions[gameState.currentQuestionNo - 1].payload} questionNo={gameState.currentQuestionNo} answer={playerAnswer} setAnswer={setPlayerAnswer} />
-          {/* question element render, for user to answer */}
+          {inputResponse({ answer: playerAnswer })}
         </>
       )}
       {questionRoundStatus === "ended" && (
+        <>
         <ScorePage user1={playerInfo[0].name} user2={playerInfo[1].name} score1={playerInfo[0].score}
         score2={playerInfo[1].score}/>
+        </>
       )}
     </>
   );

@@ -1,7 +1,6 @@
 import { Button, Container, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Homepage.css";
 
 export function JoinRoomPage() {
   const navigate = useNavigate();
@@ -29,22 +28,29 @@ export function JoinRoomPage() {
     navigate("/");
   };
 
-
-    }
-
-    const handleBackClick = () => {
-        navigate("/")
-    }
-
-
-    return (
-        <Container style={containerStyle}>
-          <div className="cartoon-container">
-            <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color:"white" }} variant={"h4"} gutterBottom marginTop={"100%"}>
-              Do you 
-              <div className="bouncing-text">
-                <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", whiteSpace: "nowrap", display: "flex", flexDirection: "row", letterSpacing:"0.02rem" }} variant={"h1"}>
-                <div className="x">K</div>
+  return (
+    <Container style={containerStyle}>
+      <div className="cartoon-container">
+        <Typography
+          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
+          variant={"h4"}
+          gutterBottom
+          marginTop={"100%"}
+        >
+          Do you
+          <div className="bouncing-text">
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                fontFamily: "Gralliec",
+                whiteSpace: "nowrap",
+                display: "flex",
+                flexDirection: "row",
+                letterSpacing: "0.02rem",
+              }}
+              variant={"h1"}
+            >
+              <div className="x">K</div>
               <div className="y">n</div>
               <div className="z">o</div>
               <div className="a">w</div>
@@ -53,41 +59,7 @@ export function JoinRoomPage() {
               <div className="q">?</div>
               <div className="shadow"></div>
               <div className="shadow-two"></div>
-                </Typography>
-              </div>
             </Typography>
-            <TextField
-              id="outlined-basic"
-              label="Enter Username"
-              variant="filled"
-              color="primary"
-              value={username}
-              onChange={handleuserNameChange}
-              sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
-            />
-            <br />
-            <TextField
-              id="outlined-basic"
-              label="Enter Room ID"
-              variant="filled"
-              color="primary"
-              value= {roomId}
-              onChange={handleRoomIdChange}
-              sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
-            />
-            <br/>
-            <Button sx={{ marginTop: "15%" }} variant="contained" onClick={handleJoinClick} disabled={roomId == '' || username == ''}>
-              <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", letterSpacing:"0.09rem"}}  variant={"h5"}>
-              Join Room
-              </Typography >
-            </Button>
-            <br/>
-            <Button sx={{ marginTop: "15%", backgroundColor:"orange" }} variant="contained" onClick={handleBackClick}>
-              <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", letterSpacing:"0.09rem"}}  variant={"h5"}>
-              Back
-              </Typography >
-            </Button>
-
           </div>
         </Typography>
         <TextField
@@ -129,7 +101,7 @@ export function JoinRoomPage() {
         </Button>
         <br />
         <Button
-          sx={{ marginTop: "15%" }}
+          sx={{ marginTop: "15%", background: "orange" }}
           variant="contained"
           onClick={handleBackClick}
         >

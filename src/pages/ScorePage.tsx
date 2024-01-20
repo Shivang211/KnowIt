@@ -10,7 +10,7 @@ function ScorePage(){
     }
 
     return(
-      <div style={{backgroundColor:"purple",height:'100vh'}}>
+      <div style={{height:'100vh'}}>
         <Box sx={{alignContent:'center'}} >
         <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h1"} gutterBottom>
         KnowIt

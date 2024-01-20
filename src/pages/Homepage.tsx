@@ -51,10 +51,9 @@ function Homepage() {
     <Container style={containerStyle}>
       <div className="cartoon-container">
         <Typography
-          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
-          variant={"h4"}
+          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white", lineHeight: 0.4 }}
+          variant={"h1"}
           gutterBottom
-          marginTop={"100%"}
         >
           Do you
           <div className="bouncing-text">
@@ -62,25 +61,25 @@ function Homepage() {
               sx={{
                 fontWeight: "bolder",
                 fontFamily: "Gralliec",
-                whiteSpace: "nowrap",
                 display: "flex",
                 flexDirection: "row",
-                letterSpacing: "0.02rem",
+                fontSize: "200px",
+                lineHeight: 1.1
               }}
-              variant={"h1"}
+
             >
               <div className="b">K</div>
-              <div className="o">n</div>
-              <div className="u">o</div>
-              <div className="n">w</div>
+              <div className="o">N</div>
+              <div className="u">O</div>
+              <div className="n">W</div>
               <div className="c">I</div>
-              <div className="e">t</div>
+              <div className="e">T</div>
               <div className="f">?</div>
-              <div className="shadow"></div>
-              <div className="shadow-two"></div>
             </Typography>
           </div>
         </Typography>
+      </div>
+        <Box>
         <TextField
           id="outlined-basic"
           label="Enter Username"
@@ -88,11 +87,12 @@ function Homepage() {
           color="primary"
           value={username}
           onChange={handleInputChange}
-          sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
+          sx={{ marginY: "1rem", backgroundColor: "white" }} // Set the background color to white
         />
-        <br />
+        </Box>
+        <Box>
         <Button
-          sx={{ marginTop: "15%" }}
+          sx={{ marginY: "1rem" }}
           variant="contained"
           onClick={handleConfirmClick}
           disabled={username == ""}
@@ -101,18 +101,15 @@ function Homepage() {
             sx={{
               fontWeight: "bolder",
               fontFamily: "Gralliec",
-              letterSpacing: "0.09rem",
+              letterSpacing: "0.1rem",
             }}
             variant={"h5"}
           >
             Start Game
           </Typography>
         </Button>
-        <br></br>
-        <Button
-          sx={{ height: "20px", marginY: "30%" }}
-          onClick={handleHowToPlayClick}
-        >
+        </Box>
+        <Box>
           <Typography
             sx={{
               fontWeight: "bolder",
@@ -121,7 +118,42 @@ function Homepage() {
             }}
             variant={"h3"}
             gutterBottom
-            marginTop={"50%"}
+          >
+            OR?
+          </Typography>
+          </Box>
+          <Box sx={{ marginY: "1rem" }}>
+          <Button
+            className="learn-more"
+            sx={{ marginY: "1rem" }}
+            variant="contained"
+            onClick={handleJoinClick}
+          >
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                fontFamily: "Gralliec",
+                letterSpacing: "0.09rem",
+              }}
+              variant={"h5"}
+            >
+              Join Room
+            </Typography>
+          </Button>
+          </Box>
+        <Button
+          sx={{ height: "20px" }}
+          onClick={handleHowToPlayClick}
+        >
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Gralliec",
+              color: "orange",
+              marginY: "1rem"
+            }}
+            variant={"h3"}
+            gutterBottom
           >
             How to Play?
           </Typography>
@@ -166,7 +198,6 @@ function Homepage() {
                   color: "#4cc9f0",
                   letterSpacing: "0.05rem",
                 }}
-                marginTop={"2%"}
                 variant="h6"
               >
                 (Answer: Who is ready to play KnowIt?)
@@ -175,7 +206,6 @@ function Homepage() {
           </DialogContent>
           <DialogActions>
             <Button
-              className="start-btn"
               onClick={handleCloseDialog}
               sx={{
                 backgroundColor: "white",
@@ -188,39 +218,6 @@ function Homepage() {
             </Button>
           </DialogActions>
         </Dialog>
-        <Box
-          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-        >
-          <Typography
-            sx={{
-              fontWeight: "bolder",
-              fontFamily: "Gralliec",
-              color: "orange",
-              paddingRight: "4rem",
-            }}
-            variant={"h3"}
-            gutterBottom
-          >
-            OR?
-          </Typography>
-          <Button
-            sx={{ marginBottom: "1rem" }}
-            variant="contained"
-            onClick={handleJoinClick}
-          >
-            <Typography
-              sx={{
-                fontWeight: "bolder",
-                fontFamily: "Gralliec",
-                letterSpacing: "0.09rem",
-              }}
-              variant={"h5"}
-            >
-              Join Room
-            </Typography>
-          </Button>
-        </Box>
-      </div>
     </Container>
   );
 }

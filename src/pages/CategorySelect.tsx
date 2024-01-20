@@ -307,8 +307,6 @@ function CategorySelect() {
             style: {
               backgroundColor: "#1a1a1a",
               color: "#b3b3b3",
-              width: "20%",
-              height: "60%",
               borderRadius: "10px",
               boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
               backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",
@@ -376,8 +374,6 @@ function CategorySelect() {
             style: {
               backgroundColor: "#1a1a1a",
               color: "#b3b3b3",
-              width: "30%",
-              height: "70%",
               borderRadius: "10px",
               boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
               backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",
@@ -456,8 +452,6 @@ function CategorySelect() {
             style: {
               backgroundColor: "#1a1a1a",
               color: "#b3b3b3",
-              width: "20%",
-              height: "55%",
               borderRadius: "10px",
               boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
               backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",
@@ -477,7 +471,7 @@ function CategorySelect() {
               Pick a Sport:
             </Typography>
           </DialogTitle>
-          <DialogContent>
+          <DialogContent sx={{ paddingRight: "4rem" }}>
             <List>
               <CustomButton
                 color="red"
@@ -524,8 +518,6 @@ function CategorySelect() {
             style: {
               backgroundColor: "#1a1a1a",
               color: "#b3b3b3",
-              width: "20%",
-              height: "50%",
               borderRadius: "10px",
               boxShadow: "0 4px 6px rgba(255, 255, 255, 0.1)",
               backgroundImage: "linear-gradient(to right, #ffffff, #f0f0f0)",

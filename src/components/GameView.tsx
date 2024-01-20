@@ -1,9 +1,9 @@
 import { Box, Stack, Typography } from "@mui/material";
 
 import Timer from "../components/Timer";
-import QuestionTransition from "./QuestionTransition";
 import { QuestionPage } from "../pages/QuestionPage";
 import ScorePage from "../pages/ScorePage";
+import QuestionTransition from "./QuestionTransition";
 
 interface Player {
   id: string;
@@ -42,7 +42,7 @@ const GameView = ({
 }) => {
   console.log(gameState);
   const socketId = localStorage.getItem("socketId");
-  const playerInfo = gameState.players
+  const playerInfo = gameState.players;
   const questionRoundStatus = gameState.questionRoundStatus;
   return (
     <>
@@ -55,13 +55,24 @@ const GameView = ({
       {questionRoundStatus === "started" && (
         <>
           <Timer duration={gameState.duration} />
-          <QuestionPage question={gameState.questions[gameState.currentQuestionNo - 1].payload} questionNo={gameState.currentQuestionNo} answer={playerAnswer} setAnswer={setPlayerAnswer} />
+          <QuestionPage
+            question={
+              gameState.questions[gameState.currentQuestionNo - 1].payload
+            }
+            questionNo={gameState.currentQuestionNo}
+            answer={playerAnswer}
+            setAnswer={setPlayerAnswer}
+          />
           {/* question element render, for user to answer */}
         </>
       )}
       {questionRoundStatus === "ended" && (
-        <ScorePage user1={playerInfo[0].name} user2={playerInfo[1].name} score1={playerInfo[0].score}
-        score2={playerInfo[1].score}/>
+        <ScorePage
+          user1={playerInfo[0].name}
+          user2={playerInfo[1].name}
+          score1={playerInfo[0].score}
+          score2={playerInfo[1].score}
+        />
       )}
     </>
   );

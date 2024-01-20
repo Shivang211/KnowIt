@@ -118,8 +118,8 @@ export function GameRoom() {
           )}
           {gameStatus === "ended" && (
             <>
-            {localStorage.clear()}
-            <FinalScore />
+              {localStorage.clear()}
+              <FinalScore />
             </>
           )}
         </>

@@ -22,10 +22,31 @@ function ScorePage() {
 
     return(
       <div style={{height:'100vh'}}>
+        
         <Box sx={{alignContent:'center'}} >
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h1"} gutterBottom>
-        KnowIt
-
+        <Typography
+          // marginTop={"10%"}
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            whiteSpace: "nowrap",
+            display: "flex",
+            flexDirection: "row",
+            letterSpacing: "0.02em",
+            marginLeft: "44%",
+            marginRight: "auto",
+            textAlign: "center"
+          }}
+          variant={"h1"}
+          gutterBottom
+        >
+          <div className="k">k</div>
+          <div className="h">n</div>
+          <div className="d">o</div>
+          <div className="r">w</div>
+          <div className="i">i</div>
+          <div className="t">t</div>
+          <div className="s">?</div>
         </Typography>
         <Typography
           sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}

@@ -1,17 +1,16 @@
 // ConfirmDialog.tsx
-import React from 'react';
+import { Close } from "@mui/icons-material";
 import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Button,
   Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
   IconButton,
   Typography,
-} from '@mui/material';
-import { Close } from '@mui/icons-material';
-
+} from "@mui/material";
+import React from "react";
 
 const ConfirmDialog: React.FC = () => {
   return (

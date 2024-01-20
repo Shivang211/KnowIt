@@ -19,11 +19,9 @@ function ScorePage() {
     align: "center",
   };
 
-
-    return(
-      <div style={{height:'100vh'}}>
-        
-        <Box sx={{alignContent:'center'}} >
+  return (
+    <div style={{ height: "100vh" }}>
+      <Box sx={{ alignContent: "center" }}>
         <Typography
           // marginTop={"10%"}
           sx={{
@@ -34,8 +32,8 @@ function ScorePage() {
             flexDirection: "row",
             letterSpacing: "0.02em",
             marginLeft: "44%",
-            marginRight: "auto",
-            textAlign: "center"
+            // marginRight: "auto",
+            textAlign: "center",
           }}
           variant={"h1"}
           gutterBottom

@@ -1,11 +1,10 @@
-const games = {};
-
 import moment from "moment";
+import { stringSimilarity } from "string-similarity-js";
 import { v4 as uuidv4 } from "uuid";
 
 import { getQuestions } from "./services.js";
 
-import { stringSimilarity } from "string-similarity-js";
+const games = {};
 
 export const createGame = async (id) => {
   let questions = [];
@@ -15,7 +14,7 @@ export const createGame = async (id) => {
       return {
         id: uuidv4(),
         payload: q.question,
-        answer: q.answer
+        answer: q.answer,
       };
     });
     // Parse data
@@ -95,17 +94,17 @@ export const gameLoop = async (
       const playerAnswer = player.answers[currentQuestionID];
       if (playerAnswer !== undefined) {
         if (playerAnswer.answerID === questions[currentQuestion - 1].answerID) {
-
           const maxPoints = 1000;
           const responseTime = moment(playerAnswer.answeredAt).diff(
             moment(momentRoundStarted),
             "seconds",
           );
           const responseRatio = responseTime / (roundDuration / 1000);
-          const score = maxPoints * responseRatio * stringSimilarity(playerAnswer, answer);
+          const score =
+            maxPoints * responseRatio * stringSimilarity(playerAnswer, answer);
           return {
             ...player,
-            score: score
+            score: score,
           };
         }
       }

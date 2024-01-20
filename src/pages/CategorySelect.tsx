@@ -16,7 +16,6 @@ import "./CategorySelect.css";
 // Import a separate CSS file for styling
 
 function CategorySelect() {
-
   const [openDialog, setOpenDialog] = useState(false);
 
   const [openTvShowsDialog, setOpenTvShowsDialog] = useState(false);
@@ -48,19 +47,19 @@ function CategorySelect() {
 
   const handleSportsButtonClick = () => {
     setOpenSportsDialog(true);
-  }
+  };
 
   const handleCloseSportsDialog = () => {
     setOpenSportsDialog(false);
-  }
+  };
 
   const handleGKButtonClick = () => {
     setOpenGKDialog(true);
-  }
+  };
 
   const handleCloseGKDialog = () => {
     setOpenGKDialog(false);
-  }
+  };
 
   return (
     <Container style={containerStyle}>
@@ -535,7 +534,7 @@ function CategorySelect() {
                   OLYMPICS
                 </Typography>
               </ListItemButton>
-            </ListItem>  
+            </ListItem>
             {/* Add more ListItems for additional TV shows */}
           </List>
         </Dialog>
@@ -620,7 +619,7 @@ function CategorySelect() {
                   OLYMPICS
                 </Typography>
               </ListItemButton>
-            </ListItem>  
+            </ListItem>
             {/* Add more ListItems for additional TV shows */}
           </List>
         </Dialog>

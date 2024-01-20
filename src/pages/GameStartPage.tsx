@@ -1,31 +1,82 @@
-import { Container,Typography,Grid } from "@mui/material";
-import VS from "../assets/vs.png"
+import { Container, Grid, Typography } from "@mui/material";
 
-export function GameStartPage(){
+import VS from "../assets/vs.png";
 
-    return (
-        <Container>
-            <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h1"} gutterBottom>
-        KnowIt
+export function GameStartPage() {
+  return (
+    <Container>
+      <Typography
+          // marginTop={"10%"}
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            whiteSpace: "nowrap",
+            display: "flex",
+            flexDirection: "row",
+            letterSpacing: "0.02em",
+            marginLeft: "40%",
+            // marginRight: "auto",
+            textAlign: "center"
+          }}
+          variant={"h1"}
+          gutterBottom
+        >
+          <div className="k">k</div>
+          <div className="h">n</div>
+          <div className="d">o</div>
+          <div className="r">w</div>
+          <div className="i">i</div>
+          <div className="t">t</div>
+          <div className="s">?</div>
         </Typography>
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h2"} gutterBottom>
+      <Typography
+        sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
+        variant={"h2"}
+        gutterBottom
+      >
         HarryPotter
-        </Typography>
-        <Grid container spacing={3} sx={{alignContent:'center',justifyContent:'center',marginTop:'20%'}}>
-            <Grid item alignContent={'left'}>
-            <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white',alignContent:'left' }} variant={"h2"} gutterBottom>
+      </Typography>
+      <Grid
+        container
+        spacing={3}
+        sx={{
+          alignContent: "center",
+          justifyContent: "center",
+          marginTop: "20%",
+        }}
+      >
+        <Grid item alignContent={"left"}>
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Gralliec",
+              color: "white",
+              alignContent: "left",
+            }}
+            variant={"h2"}
+            gutterBottom
+          >
             User1
-        </Typography>
+          </Typography>
         </Grid>
         <Grid item>
-            <img src={VS} style={{maxWidth:'50%'}}/>
+          <img src={VS} style={{ maxWidth: "50%" }} />
         </Grid>
-        <Grid item alignContent={'right'}>
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white',alignContent:'left' }} variant={"h2"} gutterBottom>
+        <Grid item alignContent={"right"}>
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Gralliec",
+              color: "white",
+              alignContent: "left",
+            }}
+            variant={"h2"}
+            gutterBottom
+          >
             User2
-        </Typography>
+          </Typography>
         </Grid>
-        </Grid>
-        </Container>
-    );
+      </Grid>
+    </Container>
+  );
 }

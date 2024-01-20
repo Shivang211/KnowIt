@@ -55,7 +55,7 @@ function Homepage() {
           sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
           variant={"h4"}
           gutterBottom
-          marginTop={"100%"}
+          marginTop={"80%"}
         >
           Do you
           <div className="bouncing-text">
@@ -84,24 +84,43 @@ function Homepage() {
           sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
         />
         <br />
-        <Button
-          sx={{ marginTop: "15%" }}
+        <Button className="start-btn"
+          sx={{ marginTop: "15%", backgroundColor:"#4cc9f0", color:"white", fontFamily: "Gralliec", fontSize:"24px" }}
           variant="contained"
           onClick={handleConfirmClick}
           disabled={username == ""}
+        >
+          
+            Start Game
+          
+        </Button>
+        <br></br>
+        <Box
+          sx={{marginTop:"5%", justifyContent: "center"}}
         >
           <Typography
             sx={{
               fontWeight: "bolder",
               fontFamily: "Gralliec",
-              letterSpacing: "0.09rem",
+              color: "orange",
+              
+              
             }}
-            variant={"h5"}
+            variant={"h4"}
+            gutterBottom
           >
-            Start Game
+            OR
           </Typography>
-        </Button>
-        <br></br>
+          <Button className="start-btn"
+            sx={{backgroundColor:"#4cc9f0", color:"white", fontFamily: "Gralliec", fontSize:"24px" }}
+            
+            onClick={handleJoinClick}
+          >
+            
+              Join Room
+            
+          </Button>
+        </Box>
         <Button
           sx={{ height: "20px", marginY: "30%" }}
           onClick={handleHowToPlayClick}
@@ -114,9 +133,9 @@ function Homepage() {
             }}
             variant={"h3"}
             gutterBottom
-            marginTop={"50%"}
+            marginTop={"10%"}
           >
-            How to Play?
+            ¿How to Play?
           </Typography>
         </Button>
 
@@ -167,43 +186,12 @@ function Homepage() {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleCloseDialog} color="primary">
+            <Button className='start-btn' onClick={handleCloseDialog} sx={{backgroundColor:"white", fontFamily: "Gralliec", fontSize:"24px", color:"#4cc9f0"}}>
               Close
             </Button>
+            
           </DialogActions>
         </Dialog>
-        <Box
-          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-        >
-          <Typography
-            sx={{
-              fontWeight: "bolder",
-              fontFamily: "Gralliec",
-              color: "orange",
-              paddingRight: "4rem",
-            }}
-            variant={"h3"}
-            gutterBottom
-          >
-            OR?
-          </Typography>
-          <Button
-            sx={{ marginBottom: "1rem" }}
-            variant="contained"
-            onClick={handleJoinClick}
-          >
-            <Typography
-              sx={{
-                fontWeight: "bolder",
-                fontFamily: "Gralliec",
-                letterSpacing: "0.09rem",
-              }}
-              variant={"h5"}
-            >
-              Join Room
-            </Typography>
-          </Button>
-        </Box>
       </div>
     </Container>
   );

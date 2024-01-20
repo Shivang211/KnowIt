@@ -2,8 +2,38 @@ import { Button, Container, Typography, TextField } from "@mui/material";
 import  { useState } from 'react';
 import "./Homepage.css";
 
+
+
+import { randomWords } from "random-words";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setName } from "../store/user";
+
+type HTMLElementEvent<T extends HTMLElement> = Event & {
+  target: T;
+}
+
 function Homepage() {
   const [username, setUsername] = useState('');
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const createGameHandler = (event: HTMLElementEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    dispatch(setName(name));
+    const randomRoomID = randomWords(3).join("-");
+    navigate(`/room/${randomRoomID}`);
+  };
+
+  const joinGameHandler = (event: HTMLElementEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const gameID = event.target.gameID.value;
+    dispatch(setName(name));
+    navigate(`/room/${gameID}`);
+  };
 
   const containerStyle = {
     backgroundColor: "purple", 

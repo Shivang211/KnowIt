@@ -1,11 +1,11 @@
-import { Box } from "@mui/material";
+import { Typography } from "@mui/material";
 
 function App() {
   return (
     <>
-      <Box>
+      <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h4"} gutterBottom>
         This is a box!
-      </Box>
+      </Typography>
     </>
   );
 }

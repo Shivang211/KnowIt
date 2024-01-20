@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "JP Heavy";
-  src: url("assets/gyparody\ hv.ttf") format("truetype");
+  font-family: Inter;
+  src: url("assets/Inter.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "JP Regular";
-  src: url("assets/gyparody\ rg.ttf") format("truetype");
+  font-family: Gralliec;
+  src: url("assets/GRALLIEC.otf") format("opentype");
 }
 
 #root {
@@ -14,7 +14,7 @@
 }
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 

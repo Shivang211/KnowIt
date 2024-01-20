@@ -22,13 +22,13 @@ export function QuestionPage(){
         <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h3"} gutterBottom>
         Question 
         </Typography>
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Inter",color:'white',width:'50%',margin:'auto'}} variant={"h4"} gutterBottom>
+        <Typography sx={{ fontWeight: "bolder", fontFamily: "Inter",color:'white',width:'50%',margin:'auto'}} variant={"h5"} gutterBottom>
         The term for a situation where a bowler dismisses three batsmen with three consecutive deliveries but not in the same over
         </Typography>
         </Box>
         <TextField id="filled-basic" label="Answer" value={answer} onChange={handleInputChange} variant="filled" style={{backgroundColor:'white',width:'50%',marginTop:'5%',border:'rounded'}}/>
         <br></br>
-        <Button style={{ margin: "3%",width:'10%'}}   variant="contained" onClick={handleSubmit} disabled={answer == ""}>
+        <Button style={{ margin: "4%",width:'30%'}}   variant="contained" onClick={handleSubmit} disabled={answer == ""}>
           Submit
         </Button>
         </div>

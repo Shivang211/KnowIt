@@ -4,7 +4,7 @@ function App() {
   return (
     <>
       <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h4"} gutterBottom>
-        This is a box!
+        Do You <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h1"} gutterBottom>KnowIt!</Typography>
       </Typography>
     </>
   );

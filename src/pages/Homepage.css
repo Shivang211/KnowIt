@@ -34,7 +34,7 @@
 .x,
 .y,
 .z,
-.q,
+.a,
 .m,
 .p,
 .q {
@@ -231,4 +231,34 @@
   left: 285px;
   animation: scale 1s linear infinite 0.5s;
   -webkit-animation: scale 1s linear infinite 0.5s;
+}
+
+.start-btn{
+  text-align: center;
+display: inline-block;
+margin:5px;
+  font-weight: light;
+  padding: 10px 0 10px 10px ;
+  text-shadow: -1px -1px black, 1px 1px white;
+  color: blue;
+  -webkit-border-radius: 7px;
+-moz-border-radius: 7px;
+-o-border-radius: 7px;
+border-radius: 7px;
+  box-shadow: 0 .2em orange; 
+  cursor: pointer;
+  color:white;
+  margin-bottom: "1rem" ;
+   
+   font-weight: "bolder";
+     letter-spacing: "0.09rem";
+    
+    font-size:"24px"
+
+}
+
+.video-game-button:active, .start-btn:active {
+	box-shadow: none;
+	position: relative;
+	top: .2em;
 }

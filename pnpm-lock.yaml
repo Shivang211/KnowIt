@@ -3697,6 +3697,7 @@ packages:
       }
     dependencies:
       "@sinonjs/commons": 3.0.0
+<<<<<<< HEAD
     dev: false
 
   /@socket.io/component-emitter@3.1.0:
@@ -3704,6 +3705,8 @@ packages:
       {
         integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==,
       }
+=======
+>>>>>>> main
     dev: false
 
   /@trivago/prettier-plugin-sort-imports@4.3.0(prettier@3.2.4):
@@ -5029,6 +5032,7 @@ packages:
         integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==,
       }
     engines: { node: ">= 0.8" }
+<<<<<<< HEAD
     dev: false
 
   /engine.io-client@6.5.3:
@@ -5054,6 +5058,8 @@ packages:
         integrity: sha512-9JktcM3u18nU9N2Lz3bWeBgxVgOKpw7yhRaoxQA3FUDZzzw+9WlA6p4G4u0RixNkg14fH7EfEc/RhpurtiROTQ==,
       }
     engines: { node: ">=10.0.0" }
+=======
+>>>>>>> main
     dev: false
 
   /envinfo@7.11.0:

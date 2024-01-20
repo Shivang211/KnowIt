@@ -174,9 +174,10 @@ function Homepage() {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleCloseDialog} color="primary">
+            <Button className='start-btn' onClick={handleCloseDialog} sx={{backgroundColor:"white", fontFamily: "Gralliec", fontSize:"24px", color:"#4cc9f0"}}>
               Close
             </Button>
+            
           </DialogActions>
         </Dialog>
         <Box

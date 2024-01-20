@@ -1,31 +1,4 @@
-.cartoon-container {
-  position: relative;
-  padding: 20px;
-  display: inline-block;
-}
 
-.cartoon-container::before,
-.cartoon-container::after {
-  content: "";
-  position: absolute;
-  width: 0px; /* Adjust the width of the squiggly lines */
-  height: 0px; /* Adjust the height of the squiggly lines */
-  ; /* Adjust the color of the squiggly lines */
-}
-
-.cartoon-container::before {
-  top: 0;
-  left: 0;
-  border-radius: 0 0 10px 0;
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.cartoon-container::after {
-  bottom: 0;
-  right: 0;
-  border-radius: 0 0 0 10px;
-  transform: translate(50%, 50%) rotate(45deg);
-}
 
 .bouncing-text {
   position: relative;
@@ -34,45 +7,55 @@
   font-weight: 900;
 }
 
-.x, .y, .z, .q, .m, .p, .q {
+.b, .o, .u, .n, .c, .e, .f, .g {
+  position: relative;
+  color: orange;
+  text-shadow: 0 3px #4361ee, 0 5px #4361ee, 0 7px #4361ee;
+}
+
+.k, .h, .d, .r, .i, .t, .s {
   position: relative;
   color: #4cc9f0;
   text-shadow: 0 3px #4361ee, 0 5px #4361ee, 0 7px #4361ee;
 }
 
-.x {
+.b {
   animation: bounce 1s ease infinite;
   -webkit-animation: bounce 1s ease infinite;
 }
 
-.y {
+.o {
   animation: bounce 1s ease infinite .1s;
   -webkit-animation: bounce 1s ease infinite .1s;
 }
 
-.z {
+.u {
   animation: bounce 1s ease infinite .2s;
   -webkit-animation: bounce 1s ease infinite .2s;
 }
 
-.a {
+.n {
   animation: bounce 1s ease infinite .3s;
   -webkit-animation: bounce 1s ease infinite .3s;
 }
 
-.m {
+.c {
   animation: bounce 1s ease infinite .4s;
   -webkit-animation: bounce 1s ease infinite .4s;
 }
 
-.p {
+.e {
   animation: bounce 1s ease infinite .5s;
  -webkit-animation: bounce 1s ease infinite .5s;
 }
 
-.q {
+.f {
   animation: bounce 1s ease infinite .7s;
  -webkit-animation: bounce 1s ease infinite .7s;
+}
+.g {
+  animation: bounce 1s ease infinite .8s;
+ -webkit-animation: bounce 1s ease infinite .8s;
 }
 
 @keyframes bounce {

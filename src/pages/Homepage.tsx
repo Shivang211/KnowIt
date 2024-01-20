@@ -1,4 +1,4 @@
-import { Button, Container, Typography, TextField } from "@mui/material";
+import { Button, Container, Typography, TextField, Box } from "@mui/material";
 import React, { useState } from 'react';
 import "./Homepage.css"; // Import a separate CSS file for styling
 
@@ -28,17 +28,17 @@ function Homepage() {
   return (
     <Container style={containerStyle}>
       <div className="cartoon-container">
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h4"} gutterBottom marginTop={"150%"}>
+        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h4"} gutterBottom marginTop={"100%"}>
           Do you 
           <div className="bouncing-text">
-            <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", whiteSpace: "nowrap", display: "flex", flexDirection: "row",  }} variant={"h1"}>
-              <div className="b">K</div>
-              <div className="o">n</div>
-              <div className="u">o</div>
-              <div className="n">w</div>
-              <div className="c">I</div>
-              <div className="e">t</div>
-              <div className="f">?</div>
+            <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", whiteSpace: "nowrap", display: "flex", flexDirection: "row", letterSpacing: "0.02em", color:"#4cc9f0"  }} variant={"h1"}>
+              <div className="x">K</div>
+              <div className="y">n</div>
+              <div className="z">o</div>
+              <div className="a">w</div>
+              <div className="m">I</div>
+              <div className="p">t</div>
+              <div className="q">?</div>
               <div className="shadow"></div>
               <div className="shadow-two"></div>
             </Typography>
@@ -59,7 +59,6 @@ function Homepage() {
         <Button sx={{ marginTop: "15%" }} variant="contained" onClick={handleConfirmClick} disabled={isError}>
           Confirm
         </Button>
-        
       </div>
     </Container>
   );

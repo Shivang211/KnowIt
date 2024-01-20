@@ -1,30 +1,34 @@
-import { Button, Container, Typography, TextField} from "@mui/material";
+import { Button, Container, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 
-export function JoinRoomPage(){
+export function JoinRoomPage() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate()
+  const containerStyle = {
+    backgroundColor: "purple", // Set the background color to purple
+    padding: "20px", // Add padding as needed
+  };
+  const [username, setUsername] = useState("");
+  const [roomId, setRoomId] = useState("");
 
-    const containerStyle = {
-        backgroundColor: "purple", // Set the background color to purple
-        padding: "20px", // Add padding as needed
-      };
-    const [username, setUsername] = useState("");
-    const [roomId, setRoomId] = useState('');
+  const handleuserNameChange = (event: { target: { value: any } }) => {
+    const value = event.target.value;
+    setUsername(value);
+  };
 
-    const handleuserNameChange = (event: { target: { value: any; }; }) => {
-        const value = event.target.value;
-        setUsername(value);
-    };
+  const handleRoomIdChange = (event: { target: { value: any } }) => {
+    const value = event.target.value;
+    setRoomId(value);
+  };
 
-    const handleRoomIdChange = (event: { target: { value: any; }; }) => {
-        const value = event.target.value;
-        setRoomId(value);
-    };
+  const handleJoinClick = () => {};
 
-    const handleJoinClick = () => {
+  const handleBackClick = () => {
+    navigate("/");
+  };
+
 
     }
 
@@ -83,7 +87,64 @@ export function JoinRoomPage(){
               Back
               </Typography >
             </Button>
+
           </div>
-        </Container>
-      );
+        </Typography>
+        <TextField
+          id="outlined-basic"
+          label="Enter Username"
+          variant="filled"
+          color="primary"
+          value={username}
+          onChange={handleuserNameChange}
+          sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
+        />
+        <br />
+        <TextField
+          id="outlined-basic"
+          label="Enter Room ID"
+          variant="filled"
+          color="primary"
+          value={roomId}
+          onChange={handleRoomIdChange}
+          sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
+        />
+        <br />
+        <Button
+          sx={{ marginTop: "15%" }}
+          variant="contained"
+          onClick={handleJoinClick}
+          disabled={roomId == "" || username == ""}
+        >
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Gralliec",
+              letterSpacing: "0.09rem",
+            }}
+            variant={"h5"}
+          >
+            Join Room
+          </Typography>
+        </Button>
+        <br />
+        <Button
+          sx={{ marginTop: "15%" }}
+          variant="contained"
+          onClick={handleBackClick}
+        >
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Gralliec",
+              letterSpacing: "0.09rem",
+            }}
+            variant={"h5"}
+          >
+            Back
+          </Typography>
+        </Button>
+      </div>
+    </Container>
+  );
 }

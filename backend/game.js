@@ -102,6 +102,8 @@ export const gameLoop = async (
           const responseRatio = responseTime / (roundDuration / 1000);
           const score =
             maxPoints * responseRatio * stringSimilarity(playerAnswer, answer);
+
+          console.log("score isiii", score);
           return {
             ...player,
             score: score,

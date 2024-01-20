@@ -5,12 +5,13 @@ import {
   Dialog,
   DialogTitle,
   List,
-  ListItem,
-  ListItemButton,
   Typography,
 } from "@mui/material";
+import { generate } from "random-words";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
+import { CustomButton } from "../components/CustomButton";
 import "./CategorySelect.css";
 
 // Import a separate CSS file for styling
@@ -24,9 +25,17 @@ function CategorySelect() {
 
   const [openGKDialog, setOpenGKDialog] = useState(false);
 
+  const navigate = useNavigate();
+
   const containerStyle = {
     backgroundColor: "purple", // Set the background color to purple
     padding: "20px", // Add padding as needed
+  };
+
+  const handleClick = () => {
+    const randomRoomID = generate(3).join("-");
+    localStorage.setItem("roomId", randomRoomID);
+    navigate(`/room/${randomRoomID}`, { replace: true });
   };
 
   const handleMoviesButtonClick = () => {
@@ -126,7 +135,14 @@ function CategorySelect() {
             </Typography>
           </div>
         </Typography>
-        <Box sx={{ display: "flex", flexDirection: "row", marginTop: "20%" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            marginTop: "20%",
+            textWrap: "nowrap",
+          }}
+        >
           <Box>
             <Button onClick={handleMoviesButtonClick}>
               <Typography
@@ -193,7 +209,7 @@ function CategorySelect() {
             fontWeight: "bolder",
             fontFamily: "Gralliec",
             color: "	#ff2a04",
-            marginTop: "20%",
+            marginTop: "10%",
           }}
           variant={"h2"}
           gutterBottom
@@ -204,21 +220,19 @@ function CategorySelect() {
           sx={{
             display: "flex",
             flexDirection: "row",
-            marginTop: "20%",
             justifyContent: "center",
           }}
         >
           <Button
             variant="text"
             sx={{
-              height: "75px",
+              height: "50px",
               margin: "auto",
             }}
           >
             <Typography
               sx={{
                 fontWeight: "bolder",
-                marginTop: "10%",
                 fontFamily: "Gralliec",
                 color: "#4cc9f0",
               }}
@@ -231,14 +245,12 @@ function CategorySelect() {
           <Button
             variant="text"
             sx={{
-              height: "75px",
               margin: "auto",
             }}
           >
             <Typography
               sx={{
                 fontWeight: "bolder",
-                marginTop: "10%",
                 fontFamily: "Gralliec",
                 color: "orange",
               }}
@@ -269,71 +281,22 @@ function CategorySelect() {
           </DialogTitle>
           <List>
             {/* Replace these placeholders with actual movie names */}
-            <ListItem>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                    marginLeft: "10%",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  Harry Potter
-                </Typography>
-                {/* <ListItemText primary="Harry Potter" /> */}
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                    marginLeft: "0%",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  Batman Trilogy
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                    marginLeft: "30%",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  Marvel
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                    marginLeft: "30%",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  Disney
-                </Typography>
-              </ListItemButton>
-            </ListItem>
+            <CustomButton
+              color="red"
+              content="Harry Potter"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="#4cc9f0"
+              content="Batman Trilogy"
+              callback={handleClick}
+            />
+            <CustomButton color="red" content="Marvel" callback={handleClick} />
+            <CustomButton
+              color="#4cc9f0"
+              content="Disney"
+              callback={handleClick}
+            />
           </List>
         </Dialog>
         <Dialog
@@ -355,102 +318,32 @@ function CategorySelect() {
             </Typography>
           </DialogTitle>
           <List>
-            {/* Replace these placeholders with actual TV show names */}
-            <ListItem disablePadding>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  SUITS
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  BILLIONS
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  FRIENDS
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  BREAKING BAD
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  GAME OF THRONES
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  HOW I MET YOUR MOTHER
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            {/* Add more ListItems for additional TV shows */}
+            <CustomButton color="red" content="SUITS" callback={handleClick} />
+            <CustomButton
+              color="#4cc9f0"
+              content="BILLIONS"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="red"
+              content="FRIENDS"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="#4cc9f0"
+              content="BREAKING BAD"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="red"
+              content="GAME OF THRONES"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="#4cc9f0"
+              content="HOW I MET YOUR MOTHER"
+              callback={handleClick}
+            />
           </List>
         </Dialog>
         <Dialog
@@ -472,70 +365,22 @@ function CategorySelect() {
             </Typography>
           </DialogTitle>
           <List>
-            {/* Replace these placeholders with actual TV show names */}
-            <ListItem disablePadding>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  SOCCER
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  CRICKET
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  BADMINTON
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  OLYMPICS
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            {/* Add more ListItems for additional TV shows */}
+            <CustomButton color="red" content="SOCCER" callback={handleClick} />
+            <CustomButton
+              color="#4cc9f0"
+              content="CRICKET"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="red"
+              content="BADMINTON"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="#4cc9f0"
+              content="OLYMPICS"
+              callback={handleClick}
+            />
           </List>
         </Dialog>
         <Dialog
@@ -557,70 +402,21 @@ function CategorySelect() {
             </Typography>
           </DialogTitle>
           <List>
-            {/* Replace these placeholders with actual TV show names */}
-            <ListItem disablePadding>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  WHO AM I?
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  WORLD HISTORY
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "#4cc9f0",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  WORLD MONUMENTS
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton>
-                {/* Add more TV show names as needed */}
-                <Typography
-                  sx={{
-                    fontWeight: "bolder",
-                    fontFamily: "Gralliec",
-                    color: "red",
-                  }}
-                  variant={"h4"}
-                  gutterBottom
-                >
-                  OLYMPICS
-                </Typography>
-              </ListItemButton>
-            </ListItem>
-            {/* Add more ListItems for additional TV shows */}
+            <CustomButton
+              color="red"
+              content="WHO AM I?"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="#4cc9f0"
+              content="WORLD HISTORY"
+              callback={handleClick}
+            />
+            <CustomButton
+              color="red"
+              content="WORLD MONUMENTS"
+              callback={handleClick}
+            />
           </List>
         </Dialog>
       </div>

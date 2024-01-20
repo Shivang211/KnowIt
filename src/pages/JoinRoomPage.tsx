@@ -22,7 +22,10 @@ export function JoinRoomPage() {
     setRoomId(value);
   };
 
-  const handleJoinClick = () => {};
+  const handleJoinClick = () => {
+    localStorage.setItem("username", username);
+    navigate(`/room/${roomId}`);
+  };
 
   const handleBackClick = () => {
     navigate("/");
@@ -50,13 +53,13 @@ export function JoinRoomPage() {
               }}
               variant={"h1"}
             >
-              <div className="x">K</div>
-              <div className="y">n</div>
-              <div className="z">o</div>
-              <div className="a">w</div>
-              <div className="m">I</div>
-              <div className="p">t</div>
-              <div className="q">?</div>
+              <div className="b">K</div>
+              <div className="o">n</div>
+              <div className="u">o</div>
+              <div className="n">w</div>
+              <div className="c">I</div>
+              <div className="e">t</div>
+              <div className="f">?</div>
               <div className="shadow"></div>
               <div className="shadow-two"></div>
             </Typography>
@@ -101,7 +104,7 @@ export function JoinRoomPage() {
         </Button>
         <br />
         <Button
-          sx={{ marginTop: "15%", background: "orange" }}
+          sx={{ marginTop: "15%" }}
           variant="contained"
           onClick={handleBackClick}
         >

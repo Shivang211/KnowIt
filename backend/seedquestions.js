@@ -1,4 +1,4 @@
-export const qs = [
+export const seedquestions = [
   {
     question:
       "The format of this cricket variant is characterized by matches lasting a single day.",

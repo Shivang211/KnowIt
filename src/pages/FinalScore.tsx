@@ -17,28 +17,12 @@ export function FinalScore() {
   return (
     <div style={{ height: "100vh" }}>
       <Typography
-          // marginTop={"10%"}
-          sx={{
-            fontWeight: "bolder",
-            fontFamily: "Gralliec",
-            whiteSpace: "nowrap",
-            display: "flex",
-            flexDirection: "row",
-            letterSpacing: "0.02em",
-            justifyContent: "center",
-            textAlign: "center"
-          }}
-          variant={"h1"}
-          gutterBottom
-        >
-          <div className="k">k</div>
-          <div className="h">n</div>
-          <div className="d">o</div>
-          <div className="r">w</div>
-          <div className="i">i</div>
-          <div className="t">t</div>
-          <div className="s">?</div>
-        </Typography>
+        sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
+        variant="h1"
+        gutterBottom
+      >
+        KnowIt?
+      </Typography>
       <Typography
         sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
         variant="h2"

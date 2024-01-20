@@ -7,19 +7,15 @@ import {
   List,
   ListItem,
   ListItemButton,
-  ListItemText,
-  TextField,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 
 import "./CategorySelect.css";
 
 // Import a separate CSS file for styling
 
 function CategorySelect() {
-  const [username, setUsername] = useState("");
-  const [isError, setIsError] = useState(false);
 
   const [openDialog, setOpenDialog] = useState(false);
 
@@ -66,20 +62,6 @@ function CategorySelect() {
     setOpenGKDialog(false);
   }
 
-  const handleInputChange = (event: { target: { value: any } }) => {
-    const value = event.target.value;
-    setUsername(value);
-    setIsError(value.trim() === ""); // Set isError to true if the input is empty
-  };
-
-  const handleConfirmClick = () => {
-    // Add your logic to handle form submission here
-    if (!isError) {
-      // Only proceed if the input is not empty
-      console.log("Username:", username);
-    }
-  };
-
   return (
     <Container style={containerStyle}>
       <div className="cartoon-container">
@@ -111,7 +93,7 @@ function CategorySelect() {
           variant={"h4"}
           gutterBottom
         >
-          Looking good, username
+          Looking good, {localStorage.getItem("username")}
         </Typography>
         <Typography
           sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }}

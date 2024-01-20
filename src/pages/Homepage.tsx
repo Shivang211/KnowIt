@@ -1,17 +1,17 @@
-import { Button, Container, Typography, TextField, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@mui/material";
+import { Box, Button, Container, Typography, TextField, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Divider } from "@mui/material";
 import  { useState } from 'react';
+import {useNavigate} from 'react-router-dom'
 import "./Homepage.css";
 
 function Homepage() {
   const [username, setUsername] = useState('');
   const [openDialog, setOpenDialog] = useState(false);
+  const navigate = useNavigate()
 
   const containerStyle = {
     backgroundColor: "purple", 
     padding: "20px",
   };
-
-  
 
   const handleInputChange = (event: { target: { value: any; }; }) => {
     const value = event.target.value;
@@ -19,7 +19,8 @@ function Homepage() {
   };
 
   const handleConfirmClick = () => {
-    // Handle confirm logic
+    localStorage.setItem("username", username);
+    navigate("/category")
   };
 
   const handleHowToPlayClick = () => {
@@ -29,6 +30,10 @@ function Homepage() {
   const handleCloseDialog = () => {
     setOpenDialog(false);
   };
+
+  const handleJoinClick = () => {
+    navigate("/join-room")
+  }
 
   return (
     <Container style={containerStyle}>
@@ -61,11 +66,11 @@ function Homepage() {
         <br />
         <Button sx={{ marginTop: "15%" }} variant="contained" onClick={handleConfirmClick} disabled={username == ''}>
           <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", letterSpacing:"0.09rem"}}  variant={"h5"}>
-          Confirm
+          Start Game
           </Typography >
         </Button>
         <br></br>
-        <Button sx={{height:"20px", marginTop:"20%"}} onClick={handleHowToPlayClick}>
+        <Button sx={{height:"20px", marginY:"30%"}} onClick={handleHowToPlayClick}>
           <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color:"orange" }} variant={"h3"} gutterBottom marginTop={"50%"}>
             How to Play?
           </Typography>
@@ -99,6 +104,16 @@ function Homepage() {
             </Button>
           </DialogActions>
         </Dialog>
+        <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color:"orange", paddingRight: "4rem" }} variant={"h3"} gutterBottom >
+            OR?
+        </Typography>
+        <Button sx={{ marginBottom: "1rem" }} variant="contained" onClick={handleJoinClick}>
+          <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", letterSpacing:"0.09rem"}}  variant={"h5"}>
+          Join Room
+          </Typography >
+        </Button>
+        </Box>
       </div>
     </Container>
   );

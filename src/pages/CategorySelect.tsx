@@ -163,7 +163,14 @@ function CategorySelect() {
           }}
         >
           <Box>
-            <Button onClick={handleMoviesButtonClick}>
+            <Button 
+              onClick={handleMoviesButtonClick}
+              sx={{
+                border: "1px solid white", // add a white border to the button
+                borderRadius: "5px", // add rounded corners to the button
+                padding: "10px", // add some padding to the button
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -178,7 +185,14 @@ function CategorySelect() {
             </Button>
           </Box>
           <Box marginLeft={"5%"}>
-            <Button onClick={handleTvShowsButtonClick}>
+            <Button 
+              onClick={handleTvShowsButtonClick}
+              sx={{
+                border: "1px solid white", // add a white border to the button
+                borderRadius: "5px", // add rounded corners to the button
+                padding: "10px", // add some padding to the button
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -188,12 +202,19 @@ function CategorySelect() {
                 variant={"h4"}
                 gutterBottom
               >
-                Tv Shows
+                Shows
               </Typography>
             </Button>
           </Box>
           <Box marginLeft={"5%"}>
-            <Button onClick={handleSportsButtonClick}>
+            <Button 
+              onClick={handleSportsButtonClick}
+              sx={{
+                border: "1px solid white", // add a white border to the button
+                borderRadius: "5px", // add rounded corners to the button
+                padding: "10px", // add some padding to the button
+              }}
+              >
               <Typography
                 sx={{
                   fontWeight: "bolder",
@@ -208,7 +229,14 @@ function CategorySelect() {
             </Button>
           </Box>
           <Box marginLeft={"5%"}>
-            <Button onClick={handleGKButtonClick}>
+            <Button 
+            onClick={handleGKButtonClick}
+            sx={{
+              border: "1px solid white", // add a white border to the button
+              borderRadius: "5px", // add rounded corners to the button
+              padding: "10px", // add some padding to the button
+            }}
+            >
               <Typography
                 sx={{
                   fontWeight: "bolder",

@@ -19,7 +19,7 @@ export function CustomButton({
   return (
     <ListItem disablePadding>
       <ListItemButton onClick={callback}>
-        <img src={imageSource} width="30" height="30" />
+        <img src={imageSource} width="50" height="50" />
         <ListItemText
           sx={{
             ml: 2,

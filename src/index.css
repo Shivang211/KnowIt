@@ -11,6 +11,8 @@
 #root {
   margin: auto;
   text-align: center;
+  min-width: 100dvw;
+  min-height: 100vh;
 }
 
 :root {
@@ -41,8 +43,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* min-width: 320px;
+  min-height: 100vh; */
 }
 
 h1 {

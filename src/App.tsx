@@ -1,11 +1,14 @@
-import { Typography } from "@mui/material";
+import { Route, Routes } from "react-router-dom";
+
+import HomePage from "./pages/Homepage";
+
 
 function App() {
   return (
     <>
-      <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h4"} gutterBottom>
-        Do You <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }} variant={"h1"} gutterBottom>KnowIt!</Typography>
-      </Typography>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+      </Routes>
     </>
   );
 }

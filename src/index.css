@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "JP Heavy";
+  src: url("assets/gyparody\ hv.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "JP Regular";
+  src: url("assets/gyparody\ rg.ttf") format("truetype");
+}
+
 #root {
   margin: auto;
   text-align: center;

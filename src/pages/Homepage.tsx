@@ -1,28 +1,22 @@
 import { Button, Container, Typography, TextField } from "@mui/material";
-import React, { useState } from 'react';
-import "./Homepage.css"; // Import a separate CSS file for styling
+import  { useState } from 'react';
+import "./Homepage.css";
 
 function Homepage() {
   const [username, setUsername] = useState('');
-  const [isError, setIsError] = useState(false);
 
   const containerStyle = {
-    backgroundColor: "purple", // Set the background color to purple
-    padding: "20px", // Add padding as needed
+    backgroundColor: "purple", 
+    padding: "20px",
   };
 
   const handleInputChange = (event: { target: { value: any; }; }) => {
     const value = event.target.value;
     setUsername(value);
-    setIsError(value.trim() === ''); // Set isError to true if the input is empty
   };
 
   const handleConfirmClick = () => {
-    // Add your logic to handle form submission here
-    if (!isError) {
-      // Only proceed if the input is not empty
-      console.log('Username:', username);
-    }
+  
   };
 
   return (
@@ -53,13 +47,10 @@ function Homepage() {
           onChange={handleInputChange}
           sx={{ marginTop: "10%", backgroundColor: "white" }} // Set the background color to white
         />
-        {isError && <Typography sx={{ color: 'red' }}>Username cannot be empty</Typography>}
         <br />
-
-        <Button sx={{ marginTop: "15%" }} variant="contained" onClick={handleConfirmClick} disabled={isError}>
+        <Button sx={{ marginTop: "15%" }} variant="contained" onClick={handleConfirmClick} disabled={username == ''}>
           Confirm
         </Button>
-        
       </div>
     </Container>
   );

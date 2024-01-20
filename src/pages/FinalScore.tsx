@@ -2,17 +2,24 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import { animated, useSpring } from "react-spring";
 
 import Winner from "../assets/winner.png";
+import Blank from "../assets/blank.png"
 
-export function FinalScore() {
+import { useNavigate } from "react-router-dom";
+
+
+
+export function FinalScore({user1,user2,score1,score2}:{user1:string;user2:string;score1:number;score2:number}) {
   const imageAnimation = useSpring({
     from: { opacity: 0, transform: "scale(0.4)" },
     to: { opacity: 1, transform: "scale(1)" },
     config: { duration: 2500 },
   });
+  const navigate = useNavigate()
 
-  function handlePlayAgain() {}
-
-  function handleExit() {}
+  const handleExit = () => {
+    navigate("/");
+    localStorage.clear();
+  }
 
   return (
     <div style={{ height: "100vh" }}>
@@ -35,7 +42,7 @@ export function FinalScore() {
         <Grid container spacing={5} alignItems="center" justifyContent="center">
           <Grid item>
             <animated.img
-              src={Winner}
+              src={score1 > score2 ? Winner : Blank}
               alt="Your Image"
               style={{
                 maxWidth: "30%",
@@ -56,7 +63,7 @@ export function FinalScore() {
               }}
               gutterBottom
             >
-              Player 1
+              {user1}
             </Typography>
           </Grid>
           <Grid item>
@@ -70,7 +77,7 @@ export function FinalScore() {
               }}
               gutterBottom
             >
-              Score 1
+              {score1}
             </Typography>
           </Grid>
         </Grid>
@@ -79,7 +86,7 @@ export function FinalScore() {
       <Grid container spacing={5} alignItems="center" justifyContent="center">
         <Grid item>
           <animated.img
-            src={Winner}
+            src={score2 > score1 ? Winner : Blank}
             alt="Your Image"
             style={{
               maxWidth: "30%",
@@ -100,7 +107,7 @@ export function FinalScore() {
             }}
             gutterBottom
           >
-            Player 2
+            {user2}
           </Typography>
         </Grid>
         <Grid item>
@@ -114,18 +121,10 @@ export function FinalScore() {
             }}
             gutterBottom
           >
-            Score 2
+            {score2}
           </Typography>
         </Grid>
       </Grid>
-
-      <Button
-        style={{ margin: "1%", width: "30%" }}
-        variant="contained"
-        onClick={handlePlayAgain}
-      >
-        Play Again
-      </Button>
       <br />
       <Button
         style={{ margin: "1%", width: "30%" }}

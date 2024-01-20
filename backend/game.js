@@ -94,20 +94,7 @@ export const gameLoop = async (
       const playerAnswer = player.answers[currentQuestionID];
       if (playerAnswer !== undefined) {
         if (playerAnswer.answerID === questions[currentQuestion - 1].answerID) {
-          const maxPoints = 1000;
-          const responseTime = moment(playerAnswer.answeredAt).diff(
-            moment(momentRoundStarted),
-            "seconds",
-          );
-          const responseRatio = responseTime / (roundDuration / 1000);
-          const score =
-            maxPoints * responseRatio * stringSimilarity(playerAnswer, answer);
-
-          console.log("score isiii", score);
-          return {
-            ...player,
-            score: score,
-          };
+          return player;
         }
       }
       return player;
@@ -176,11 +163,9 @@ export const updatePlayerReadyStatus = ({ id, name, room }) => {
 
 export const updatePlayerAnswer = ({
   id,
-  name,
   room,
   questionID,
-  answerID,
-  momentAnswered,
+  answer,
 }) => {
   // Add validation for questionID to check if answer submitted is for current question
   if (games[room] !== undefined) {
@@ -188,9 +173,15 @@ export const updatePlayerAnswer = ({
     const existingUser = newPlayersList.findIndex((user) => user.id === id);
     if (existingUser !== -1) {
       newPlayersList[existingUser].answers[questionID] = {
-        answerID,
-        answeredAt: momentAnswered,
+        answer
       };
+
+      // update score 
+      const maxPoints = 1000;
+      const a = games[room].questions.filter(q => q.id === questionID);
+      console.log("AAAAA", a);
+      newPlayersList[existingUser].score += maxPoints * stringSimilarity(a[0].answer, answer);
+
       games[room].players = newPlayersList;
       return { game: games[room] };
     }

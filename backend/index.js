@@ -97,14 +97,13 @@ io.on("connect", (socket) => {
   // Set player's answer
   socket.on(
     "player-answer",
-    ({ name, room, questionID, answerID }, callback) => {
+    ({ name, room, questionID, answer }, callback) => {
       const { game, error } = updatePlayerAnswer({
         id: socket.id,
         name,
         room,
         questionID,
-        answerID,
-        momentAnswered: moment().format(),
+        answer
       });
       callback({ game, error });
     },

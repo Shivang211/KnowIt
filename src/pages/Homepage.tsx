@@ -79,8 +79,18 @@ function Homepage() {
           <DialogContent>
             <DialogContentText>
               {/* Add your instructions or information about how to play */}
+              <Typography sx={{display: "flex", flexDirection: "row"}}>
              Ever thought you will do amazing on Jeopardy? Let's get to KnowIt. Play this with your friends and see your expertise in your favorite topics. Just begin by entering your username.
-            Choose a category you wanna play, and you're all set. You will be prompted questions and you will 
+            Choose a category you wanna play, and you're all set. You will be prompted questions and you are required to enter the answer in the form of the questions.
+            </Typography>
+            <Typography marginTop={"5%"}>
+            You are now ready to play KnowIt.
+            
+            </Typography>
+            
+            <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color:"#4cc9f0", letterSpacing:"0.05rem"}}  marginTop={"2%"} variant="h6">
+            (Answer: Who is ready to play KnowIt?)
+            </Typography>
             </DialogContentText>
           </DialogContent>
           <DialogActions>

@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 
-function ScorePage() {
+function ScorePage({user1,user2,score1,score2}:{user1:string,user2:string,score1:number,score2:number}) {
   const styles = {
     fontSize: "25px",
     padding: "5%",
@@ -19,14 +19,9 @@ function ScorePage() {
     align: "center",
   };
 
-
-    return(
-      <div style={{height:'100vh'}}>
-        <Box sx={{alignContent:'center'}} >
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h1"} gutterBottom>
-        KnowIt
-
-        </Typography>
+  return (
+    <div style={{ height: "100vh" }}>
+      <Box sx={{ alignContent: "center" }}>
         <Typography
           sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
           variant={"h3"}
@@ -39,12 +34,12 @@ function ScorePage() {
             <Table>
               <TableBody>
                 <TableRow>
-                  <TableCell style={styles}>Player1</TableCell>
-                  <TableCell style={styles}>Player 2</TableCell>
+                  <TableCell style={styles}>{user1}</TableCell>
+                  <TableCell style={styles}>{user2}</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell style={styles}>Score 1</TableCell>
-                  <TableCell style={styles}>Score 2</TableCell>
+                  <TableCell style={styles}>{score1}</TableCell>
+                  <TableCell style={styles}>{score2}</TableCell>
                 </TableRow>
               </TableBody>
             </Table>

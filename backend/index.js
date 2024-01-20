@@ -1,19 +1,19 @@
-import http from "http";
-import express from "express";
-import { Server } from "socket.io";
 import cors from "cors";
+import express from "express";
+import http from "http";
 import moment from "moment";
+import { Server } from "socket.io";
 
-import { addUser, removeUser } from "./users.js";
 import {
-  createGame,
   addPlayer,
+  createGame,
   disconnectPlayer,
-  updatePlayerReadyStatus,
-  updatePlayerAnswer,
-  getGameByID,
   gameLoop,
+  getGameByID,
+  updatePlayerAnswer,
+  updatePlayerReadyStatus,
 } from "./game.js";
+import { addUser, removeUser } from "./users.js";
 
 const app = express();
 app.use(
@@ -127,6 +127,4 @@ io.on("connect", (socket) => {
 });
 
 const port = process.env.PORT || 8000;
-server.listen(port, () =>
-  console.log(`Server has started on port ${port}`)
-);
+server.listen(port, () => console.log(`Server has started on port ${port}`));

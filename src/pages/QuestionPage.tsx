@@ -1,36 +1,51 @@
-import {Box,Typography,Button, TextField} from "@mui/material";
+import { Box, Button, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
-export function QuestionPage(){
+export function QuestionPage({ question,questionNo, answer, setAnswer }: { question: string; questionNo: string; answer: string; setAnswer: (_: string) => void }) {
 
-    const [answer,setAnswer] = useState("")
+  function handleInputChange(event: { target: { value: any } }) {
+    const value = event.target.value;
+    setAnswer(value);
+  }
 
-    function handleInputChange(event: { target: { value: any; }; }){
-        const value = event.target.value
-        setAnswer(value)
-    }
-
-    function handleSubmit(){
-
-    }
-    return (
-        <div style={{height:'100vh'}}>
-            <Box sx={{alignContent:'center'}} >
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h1"} gutterBottom>
-        KnowIt
+  function handleSubmit() {}
+  return (
+    <Box style={{ height: "100vh" }}>
+      <Box sx={{ alignContent: "center" }}>
+        <Typography
+          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
+          variant={"h3"}
+          gutterBottom
+        >
+          {`Question ${questionNo}`}
         </Typography>
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Gralliec",color:'white' }} variant={"h3"} gutterBottom>
-        Question 
+        <Typography
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Inter",
+            color: "white",
+            width: "50%",
+            margin: "auto",
+          }}
+          variant={"h5"}
+          gutterBottom
+        >
+          {question}
         </Typography>
-        <Typography sx={{ fontWeight: "bolder", fontFamily: "Inter",color:'white',width:'50%',margin:'auto'}} variant={"h5"} gutterBottom>
-        The term for a situation where a bowler dismisses three batsmen with three consecutive deliveries but not in the same over
-        </Typography>
-        </Box>
-        <TextField id="filled-basic" label="Answer" value={answer} onChange={handleInputChange} variant="filled" style={{backgroundColor:'white',width:'50%',marginTop:'5%',border:'rounded'}}/>
-        <br></br>
-        <Button style={{ margin: "4%",width:'30%'}}   variant="contained" onClick={handleSubmit} disabled={answer == ""}>
-          Submit
-        </Button>
-        </div>
-    )
+      </Box>
+      <TextField
+        id="filled-basic"
+        label="Answer"
+        value={answer}
+        onChange={handleInputChange}
+        variant="filled"
+        style={{
+          backgroundColor: "white",
+          width: "50%",
+          marginTop: "5%",
+          border: "rounded",
+        }}
+      />
+    </Box>
+  );
 }

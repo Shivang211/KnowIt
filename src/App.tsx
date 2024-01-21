@@ -13,7 +13,6 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/category" element={<CategorySelect />} />
-        <Route path="/final-score" element={<FinalScore />} />
         <Route path="/game-start" element={<GameStartPage />} />
         <Route path="/join-room" element={<JoinRoomPage />} />
         <Route path="/room/:id" element={<GameRoom />} />

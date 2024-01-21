@@ -1,4 +1,4 @@
-import { Button, CircularProgress, Typography } from "@mui/material";
+import { Box, Button, CircularProgress, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -24,12 +24,14 @@ export function GameRoom() {
   const navigate = useNavigate();
 
   const name = localStorage.getItem("username");
+  const topic = localStorage.getItem("topic");
+  
   const ENDPOINT = "http://localhost:8000";
 
   useEffect(() => {
     socket = io(ENDPOINT);
 
-    socket.emit("join", { name: name, room: id }, ({ error, user }) => {
+    socket.emit("join", { name: name, room: id, topic: topic }, ({ error, user }) => {
       if (error) {
         alert(error);
       } else {
@@ -109,18 +111,66 @@ export function GameRoom() {
           fontFamily: "Inter",
           color: "white",
         }}
-        variant="h3"
+        variant="h5"
       >
-        Your Room ID is {id}
+        Your Room ID is
       </Typography>
-      {!isSocketJoined && <CircularProgress />}
+      <Typography
+        sx={{
+          fontWeight: "bolder",
+          fontFamily: "monospace",
+          color: "white",
+        }}
+        variant="h4"
+      >
+        {id}
+      </Typography>
+      {!isSocketJoined && (
+        <>
+      <CircularProgress size="5rem" sx={{ marginY: "5rem" }} />
+      <Typography
+        sx={{
+          fontWeight: "bolder",
+          fontFamily: "Inter",
+          color: "white",
+        }}
+        variant="h4"
+      >
+        So lonely ;)
+      </Typography>
+      <Typography
+        sx={{
+          fontWeight: "bolder",
+          fontFamily: "Inter",
+          color: "white",
+        }}
+        variant="h4"
+      >
+        Let's wait for your friend to join!
+      </Typography>
+      </>
+    )}
 
       {isSocketJoined && (
         <>
           {gameStatus === "pending" && (
-            <Button disabled={isReady} onClick={sendReadyStatus}>
+            <>
+            <Button
+            sx={{ marginY: "2rem" }}
+            disabled={isReady} onClick={sendReadyStatus} variant="contained"
+          >
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                fontFamily: "Gralliec",
+                letterSpacing: "0.09rem",
+              }}
+              variant={"h3"}
+            >
               {isReady ? "Waiting for players" : "Ready"}
-            </Button>
+            </Typography>
+          </Button>
+            </>
           )}
           {gameStatus === "started" && (
             <GameView

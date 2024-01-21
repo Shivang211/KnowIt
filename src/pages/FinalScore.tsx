@@ -22,14 +22,7 @@ export function FinalScore({user1,user2,score1,score2}:{user1:string;user2:strin
   }
 
   return (
-    <div style={{ height: "100vh" }}>
-      <Typography
-        sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
-        variant="h1"
-        gutterBottom
-      >
-        KnowIt?
-      </Typography>
+    <div style={{ height: "100vh", marginTop: "2rem" }}>
       <Typography
         sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
         variant="h2"
@@ -127,11 +120,20 @@ export function FinalScore({user1,user2,score1,score2}:{user1:string;user2:strin
       </Grid>
       <br />
       <Button
-        style={{ margin: "1%", width: "30%" }}
+        sx={{ marginBottom: "1rem" }}
         variant="contained"
         onClick={handleExit}
       >
-        Exit
+        <Typography
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            letterSpacing: "0.09rem",
+          }}
+          variant={"h3"}
+        >
+          Exit
+        </Typography>
       </Button>
     </div>
   );

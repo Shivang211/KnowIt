@@ -1,6 +1,3 @@
-import { Box, Stack, Typography } from "@mui/material";
-
-import Timer from "../components/Timer";
 import QuestionTransition from "./QuestionTransition";
 import { QuestionPage } from "../pages/QuestionPage";
 import ScorePage from "../pages/ScorePage";
@@ -56,13 +53,13 @@ const GameView = ({
       )}
       {questionRoundStatus === "started" && (
         <>
-          <Timer duration={gameState.duration} />
-          <QuestionPage question={gameState.questions[gameState.currentQuestionNo - 1].payload} questionNo={gameState.currentQuestionNo} answer={playerAnswer} setAnswer={setPlayerAnswer} />
+          <QuestionPage question={gameState.questions[gameState.currentQuestionNo - 1].payload} questionNo={gameState.currentQuestionNo} answer={playerAnswer} setAnswer={setPlayerAnswer} duration={gameState.duration}/>
           {inputResponse({ answer: playerAnswer })}
         </>
       )}
       {questionRoundStatus === "ended" && (
         <>
+        {setPlayerAnswer("")}
         <ScorePage user1={playerInfo[0].name} user2={playerInfo[1].name} score1={playerInfo[0].score}
         score2={playerInfo[1].score}/>
         </>

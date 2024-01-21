@@ -12,15 +12,25 @@ const QuestionTransition = ({
 
   useEffect(() => {
     setInterval(() => {
-      setTimeLeft((prev) => {
-        return prev - 1;
-      });
+      setTimeLeft((prev) => prev - 1);
     }, 1000);
   }, []);
+
   return (
+    <>
     <Typography
-      sx={{ fontSize: "large" }}
-    >{`Qn ${questionNo} starting in ${timeLeft} seconds`}</Typography>
+      sx={{
+        fontWeight: "bolder",
+        fontFamily: "Gralliec",
+        letterSpacing: "0.09rem",
+        color: "white",
+        marginY: "2rem"
+      }}
+      variant={"h3"}
+    >
+      {`Question ${questionNo} starting in ${timeLeft} seconds`}
+    </Typography>
+    </>
   );
 };
 

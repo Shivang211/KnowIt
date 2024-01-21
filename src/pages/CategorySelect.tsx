@@ -32,9 +32,10 @@ function CategorySelect() {
     padding: "20px", // Add padding as needed
   };
 
-  const handleClick = () => {
+  const handleClick = (topic: string) => {
     const randomRoomID = generate(3).join("-");
     localStorage.setItem("roomId", randomRoomID);
+    localStorage.setItem("topic", topic);
     navigate(`/room/${randomRoomID}`, { replace: true });
   };
 
@@ -284,18 +285,18 @@ function CategorySelect() {
             <CustomButton
               color="red"
               content="Harry Potter"
-              callback={handleClick}
+              callback={() => handleClick("Harry Potter")}
             />
             <CustomButton
               color="#4cc9f0"
               content="Batman Trilogy"
-              callback={handleClick}
+              callback={() => handleClick("Batman Trilogy")}
             />
-            <CustomButton color="red" content="Marvel" callback={handleClick} />
+            <CustomButton color="red" content="Marvel" callback={() => handleClick("Marvel")} />
             <CustomButton
               color="#4cc9f0"
               content="Disney"
-              callback={handleClick}
+              callback={() => handleClick("Disney")}
             />
           </List>
         </Dialog>
@@ -318,31 +319,31 @@ function CategorySelect() {
             </Typography>
           </DialogTitle>
           <List>
-            <CustomButton color="red" content="SUITS" callback={handleClick} />
+            <CustomButton color="red" content="SUITS" callback={() => handleClick("SUITS")} />
             <CustomButton
               color="#4cc9f0"
               content="BILLIONS"
-              callback={handleClick}
+              callback={() => handleClick("BILLIONS")}
             />
             <CustomButton
               color="red"
               content="FRIENDS"
-              callback={handleClick}
+              callback={() => handleClick("FRIENDS")}
             />
             <CustomButton
               color="#4cc9f0"
               content="BREAKING BAD"
-              callback={handleClick}
+              callback={() => handleClick("BILLIONS")}
             />
             <CustomButton
               color="red"
               content="GAME OF THRONES"
-              callback={handleClick}
+              callback={() => handleClick("GAME OF THRONES")}
             />
             <CustomButton
               color="#4cc9f0"
               content="HOW I MET YOUR MOTHER"
-              callback={handleClick}
+              callback={() => handleClick("HOW I MET YOUR MOTHER")}
             />
           </List>
         </Dialog>
@@ -365,21 +366,21 @@ function CategorySelect() {
             </Typography>
           </DialogTitle>
           <List>
-            <CustomButton color="red" content="SOCCER" callback={handleClick} />
+            <CustomButton color="red" content="SOCCER" callback={() => handleClick("SOCCER")} />
             <CustomButton
               color="#4cc9f0"
               content="CRICKET"
-              callback={handleClick}
+              callback={() => handleClick("CRICKET")}
             />
             <CustomButton
               color="red"
               content="BADMINTON"
-              callback={handleClick}
+              callback={() => handleClick("BADMINTON")}
             />
             <CustomButton
               color="#4cc9f0"
               content="OLYMPICS"
-              callback={handleClick}
+              callback={() => handleClick("OLYMPICS")}
             />
           </List>
         </Dialog>
@@ -405,17 +406,17 @@ function CategorySelect() {
             <CustomButton
               color="red"
               content="WHO AM I?"
-              callback={handleClick}
+              callback={() => handleClick("WHO AM I?")}
             />
             <CustomButton
               color="#4cc9f0"
               content="WORLD HISTORY"
-              callback={handleClick}
+              callback={() => handleClick("WORLD HISTORY")}
             />
             <CustomButton
               color="red"
               content="WORLD MONUMENTS"
-              callback={handleClick}
+              callback={() => handleClick("WORLD MONUMENTS")}
             />
           </List>
         </Dialog>

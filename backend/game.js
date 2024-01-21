@@ -6,10 +6,10 @@ import { getQuestions } from "./services.js";
 
 const games = {};
 
-export const createGame = async (id) => {
+export const createGame = async (id, topic) => {
   let questions = [];
   try {
-    const data = await getQuestions(5);
+    const data = await getQuestions(topic);
     questions = await data.map((q) => {
       return {
         id: uuidv4(),
@@ -66,9 +66,9 @@ export const gameLoop = async (
   updateLeaderboardEmitter,
   updateGameStateEmitter,
 ) => {
-  const roundStartTransitionDuration = 5000; // in milliseconds
+  const roundStartTransitionDuration = 3000; // in milliseconds
   const roundEndTransitionDuration = 8000; // in milliseconds
-  const roundDuration = 10000; // in milliseconds
+  const roundDuration = 15000; // in milliseconds
   let currentQuestion = games[room].currentQuestionNo;
   const questions = games[room].questions;
   updateGameStatus(room, "started");
@@ -177,7 +177,7 @@ export const updatePlayerAnswer = ({
       };
 
       // update score 
-      const maxPoints = 1000;
+      const maxPoints = 100;
       const a = games[room].questions.filter(q => q.id === questionID);
       console.log("AAAAA", a);
       newPlayersList[existingUser].score += maxPoints * stringSimilarity(a[0].answer, answer);

@@ -48,7 +48,7 @@ io.on("connect", (socket) => {
   console.log(`${socket.id} connected!`);
 
   // Join room handler
-  socket.on("join", async ({ name, room }, callback) => {
+  socket.on("join", async ({ name, room, topic }, callback) => {
     const { error, user } = addUser({ id: socket.id, name, room });
 
     if (error) return callback({ error: error });
@@ -56,7 +56,7 @@ io.on("connect", (socket) => {
     socket.join(user.room);
     const { game, error: getGameError } = getGameByID(room);
     if (getGameError) {
-      await createGame(room);
+      await createGame(room, topic);
       addPlayer({ id: socket.id, name, room });
     } else {
       if (game.status !== "pending") {

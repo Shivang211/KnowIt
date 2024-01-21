@@ -8,6 +8,7 @@ export function JoinRoomPage() {
   const containerStyle = {
     backgroundColor: "purple", // Set the background color to purple
     padding: "20px", // Add padding as needed
+    marginTop: "4rem",
   };
   const [username, setUsername] = useState("");
   const [roomId, setRoomId] = useState("");
@@ -34,11 +35,15 @@ export function JoinRoomPage() {
   return (
     <Container style={containerStyle}>
       <div className="cartoon-container">
-        <Typography
-          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
-          variant={"h4"}
+      <Typography
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            color: "white",
+            lineHeight: 0.4,
+          }}
+          variant={"h1"}
           gutterBottom
-          marginTop={"100%"}
         >
           Do you
           <div className="bouncing-text">
@@ -46,22 +51,19 @@ export function JoinRoomPage() {
               sx={{
                 fontWeight: "bolder",
                 fontFamily: "Gralliec",
-                whiteSpace: "nowrap",
                 display: "flex",
                 flexDirection: "row",
-                letterSpacing: "0.02rem",
+                fontSize: "170px",
+                lineHeight: 1.1,
               }}
-              variant={"h1"}
             >
               <div className="b">K</div>
-              <div className="o">n</div>
-              <div className="u">o</div>
-              <div className="n">w</div>
+              <div className="o">N</div>
+              <div className="u">O</div>
+              <div className="n">W</div>
               <div className="c">I</div>
-              <div className="e">t</div>
+              <div className="e">T</div>
               <div className="f">?</div>
-              <div className="shadow"></div>
-              <div className="shadow-two"></div>
             </Typography>
           </div>
         </Typography>
@@ -97,14 +99,14 @@ export function JoinRoomPage() {
               fontFamily: "Gralliec",
               letterSpacing: "0.09rem",
             }}
-            variant={"h5"}
+            variant={"h3"}
           >
             Join Room
           </Typography>
         </Button>
         <br />
         <Button
-          sx={{ marginTop: "15%" }}
+          sx={{ marginTop: "15%", backgroundColor:"orange" }}
           variant="contained"
           onClick={handleBackClick}
         >

@@ -25,19 +25,23 @@ export function GameRoom() {
 
   const name = localStorage.getItem("username");
   const topic = localStorage.getItem("topic");
-  
+
   const ENDPOINT = "http://localhost:8000";
 
   useEffect(() => {
     socket = io(ENDPOINT);
 
-    socket.emit("join", { name: name, room: id, topic: topic }, ({ error, user }) => {
-      if (error) {
-        alert(error);
-      } else {
-        setIsSocketJoined(true);
-      }
-    });
+    socket.emit(
+      "join",
+      { name: name, room: id, topic: topic },
+      ({ error, user }) => {
+        if (error) {
+          alert(error);
+        } else {
+          setIsSocketJoined(true);
+        }
+      },
+    );
     return () => {
       socket.disconnect();
     };
@@ -69,17 +73,19 @@ export function GameRoom() {
   };
 
   const inputResponse = ({ answer }) => {
-    socket.emit("player-answer", {
-      name: name, 
-      room: id, 
-      questionID: gameState.questions[gameState.currentQuestionNo - 1].id,
-      answer: answer
-    },
-    ({ games, error }) => {
-      if (error !== undefined) alert(error);
-    })
-  }
-
+    socket.emit(
+      "player-answer",
+      {
+        name: name,
+        room: id,
+        questionID: gameState.questions[gameState.currentQuestionNo - 1].id,
+        answer: answer,
+      },
+      ({ games, error }) => {
+        if (error !== undefined) alert(error);
+      },
+    );
+  };
 
   return (
     <>
@@ -127,49 +133,51 @@ export function GameRoom() {
       </Typography>
       {!isSocketJoined && (
         <>
-      <CircularProgress size="5rem" sx={{ marginY: "5rem" }} />
-      <Typography
-        sx={{
-          fontWeight: "bolder",
-          fontFamily: "Inter",
-          color: "white",
-        }}
-        variant="h4"
-      >
-        So lonely ;)
-      </Typography>
-      <Typography
-        sx={{
-          fontWeight: "bolder",
-          fontFamily: "Inter",
-          color: "white",
-        }}
-        variant="h4"
-      >
-        Let's wait for your friend to join!
-      </Typography>
-      </>
-    )}
+          <CircularProgress size="5rem" sx={{ marginY: "5rem" }} />
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Inter",
+              color: "white",
+            }}
+            variant="h4"
+          >
+            So lonely ;)
+          </Typography>
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Inter",
+              color: "white",
+            }}
+            variant="h4"
+          >
+            Let's wait for your friend to join!
+          </Typography>
+        </>
+      )}
 
       {isSocketJoined && (
         <>
           {gameStatus === "pending" && (
             <>
-            <Button
-            sx={{ marginY: "2rem" }}
-            disabled={isReady} onClick={sendReadyStatus} variant="contained"
-          >
-            <Typography
-              sx={{
-                fontWeight: "bolder",
-                fontFamily: "Gralliec",
-                letterSpacing: "0.09rem",
-              }}
-              variant={"h3"}
-            >
-              {isReady ? "Waiting for players" : "Ready"}
-            </Typography>
-          </Button>
+              <Button
+                sx={{ marginY: "2rem" }}
+                disabled={isReady}
+                onClick={sendReadyStatus}
+                variant="contained"
+              >
+                <Typography
+                  sx={{
+                    fontWeight: "bolder",
+                    fontFamily: "Gralliec",
+                    letterSpacing: "0.09rem",
+                  }}
+                  variant={"h3"}
+                >
+                  {isReady ? "Waiting for players" : "Ready"}
+                </Typography>
+              </Button>
             </>
           )}
           {gameStatus === "started" && (
@@ -182,8 +190,12 @@ export function GameRoom() {
           )}
           {gameStatus === "ended" && (
             <>
-            <FinalScore user1={gameState.players[0].name} user2={gameState.players[1].name} score1={gameState.players[0].score}
-        score2={gameState.players[1].score}/>
+              <FinalScore
+                user1={gameState.players[0].name}
+                user2={gameState.players[1].name}
+                score1={gameState.players[0].score}
+                score2={gameState.players[1].score}
+              />
             </>
           )}
         </>

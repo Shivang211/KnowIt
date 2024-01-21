@@ -18,18 +18,18 @@ const QuestionTransition = ({
 
   return (
     <>
-    <Typography
-      sx={{
-        fontWeight: "bolder",
-        fontFamily: "Gralliec",
-        letterSpacing: "0.09rem",
-        color: "white",
-        marginY: "2rem"
-      }}
-      variant={"h3"}
-    >
-      {`Question ${questionNo} starting in ${timeLeft} seconds`}
-    </Typography>
+      <Typography
+        sx={{
+          fontWeight: "bolder",
+          fontFamily: "Gralliec",
+          letterSpacing: "0.09rem",
+          color: "white",
+          marginY: "2rem",
+        }}
+        variant={"h3"}
+      >
+        {`Question ${questionNo} starting in ${timeLeft} seconds`}
+      </Typography>
     </>
   );
 };

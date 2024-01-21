@@ -23,6 +23,7 @@ function Homepage() {
   const containerStyle = {
     backgroundColor: "purple",
     padding: "20px",
+    marginTop: "4rem",
   };
 
   const handleInputChange = (event: { target: { value: any } }) => {
@@ -51,7 +52,12 @@ function Homepage() {
     <Container style={containerStyle}>
       <div className="cartoon-container">
         <Typography
-          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white", lineHeight: 0.4 }}
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            color: "white",
+            lineHeight: 0.4,
+          }}
           variant={"h1"}
           gutterBottom
         >
@@ -63,10 +69,9 @@ function Homepage() {
                 fontFamily: "Gralliec",
                 display: "flex",
                 flexDirection: "row",
-                fontSize: "200px",
-                lineHeight: 1.1
+                fontSize: "170px",
+                lineHeight: 1.1,
               }}
-
             >
               <div className="b">K</div>
               <div className="o">N</div>
@@ -79,7 +84,7 @@ function Homepage() {
           </div>
         </Typography>
       </div>
-        <Box>
+      <Box>
         <TextField
           id="outlined-basic"
           label="Enter Username"
@@ -89,8 +94,8 @@ function Homepage() {
           onChange={handleInputChange}
           sx={{ marginY: "1rem", backgroundColor: "white" }} // Set the background color to white
         />
-        </Box>
-        <Box>
+      </Box>
+      <Box>
         <Button
           sx={{ marginY: "1rem" }}
           variant="contained"
@@ -103,121 +108,120 @@ function Homepage() {
               fontFamily: "Gralliec",
               letterSpacing: "0.1rem",
             }}
-            variant={"h5"}
+            variant={"h3"}
           >
             Start Game
           </Typography>
         </Button>
-        </Box>
-        <Box>
-          <Typography
-            sx={{
-              fontWeight: "bolder",
-              fontFamily: "Gralliec",
-              color: "orange",
-            }}
-            variant={"h3"}
-            gutterBottom
-          >
-            OR?
-          </Typography>
-          </Box>
-          <Box sx={{ marginY: "1rem" }}>
-          <Button
-            className="learn-more"
-            sx={{ marginY: "1rem" }}
-            variant="contained"
-            onClick={handleJoinClick}
-          >
-            <Typography
-              sx={{
-                fontWeight: "bolder",
-                fontFamily: "Gralliec",
-                letterSpacing: "0.09rem",
-              }}
-              variant={"h5"}
-            >
-              Join Room
-            </Typography>
-          </Button>
-          </Box>
+      </Box>
+      <Box>
+        <Typography
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            color: "orange",
+          }}
+          variant={"h3"}
+          gutterBottom
+        >
+          OR?
+        </Typography>
+      </Box>
+      <Box sx={{ marginY: "1rem" }}>
         <Button
-          sx={{ height: "20px" }}
-          onClick={handleHowToPlayClick}
+          sx={{ marginY: "1rem" }}
+          variant="contained"
+          onClick={handleJoinClick}
         >
           <Typography
             sx={{
               fontWeight: "bolder",
               fontFamily: "Gralliec",
+              letterSpacing: "0.09rem",
+            }}
+            variant={"h3"}
+          >
+            Join Room
+          </Typography>
+        </Button>
+      </Box>
+      <Button
+        sx={{ height: "20px", marginTop: "2rem" }}
+        onClick={handleHowToPlayClick}
+      >
+        <Typography
+          sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            color: "orange",
+            marginY: "1rem",
+          }}
+          variant={"h3"}
+          gutterBottom
+        >
+          How to Play?
+        </Typography>
+      </Button>
+
+      {/* Dialog for How to Play */}
+      <Dialog open={openDialog} onClose={handleCloseDialog}>
+        <DialogTitle>
+          <Typography
+            sx={{
+              fontWeight: "bolder",
+              fontFamily: "Gralliec",
               color: "orange",
-              marginY: "1rem"
             }}
             variant={"h3"}
             gutterBottom
           >
             How to Play?
           </Typography>
-        </Button>
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            {/* Add your instructions or information about how to play */}
+            <Typography sx={{ display: "flex", flexDirection: "row" }}>
+              Ever thought you will do amazing on Jeopardy? Let's get to KnowIt.
+              Play this with your friends and see your expertise in your
+              favorite topics. Just begin by entering your username. Choose a
+              category you wanna play, and you're all set. You will be prompted
+              questions and you are required to enter the answer in the form of
+              the questions. Your scores are calculated based on the similarity
+              of your answer to the optimal answer. Whoever has the highest
+              score in the end of 5 rounds wins.
+            </Typography>
+            <Typography marginTop={"5%"}>
+              You are now ready to play KnowIt.
+            </Typography>
 
-        {/* Dialog for How to Play */}
-        <Dialog open={openDialog} onClose={handleCloseDialog}>
-          <DialogTitle>
             <Typography
               sx={{
                 fontWeight: "bolder",
                 fontFamily: "Gralliec",
-                color: "orange",
-              }}
-              variant={"h3"}
-              gutterBottom
-            >
-              How to Play?
-            </Typography>
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              {/* Add your instructions or information about how to play */}
-              <Typography sx={{ display: "flex", flexDirection: "row" }}>
-                Ever thought you will do amazing on Jeopardy? Let's get to
-                KnowIt. Play this with your friends and see your expertise in
-                your favorite topics. Just begin by entering your username.
-                Choose a category you wanna play, and you're all set. You will
-                be prompted questions and you are required to enter the answer
-                in the form of the questions. Your scores are calculated based
-                on the similarity of your answer to the optimal answer. Whoever
-                has the highest score in the end of 5 rounds wins.
-              </Typography>
-              <Typography marginTop={"5%"}>
-                You are now ready to play KnowIt.
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontWeight: "bolder",
-                  fontFamily: "Gralliec",
-                  color: "#4cc9f0",
-                  letterSpacing: "0.05rem",
-                }}
-                variant="h6"
-              >
-                (Answer: Who is ready to play KnowIt?)
-              </Typography>
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button
-              onClick={handleCloseDialog}
-              sx={{
-                backgroundColor: "white",
-                fontFamily: "Gralliec",
-                fontSize: "24px",
                 color: "#4cc9f0",
+                letterSpacing: "0.05rem",
               }}
+              variant="h6"
             >
-              Close
-            </Button>
-          </DialogActions>
-        </Dialog>
+              (Answer: Who is ready to play KnowIt?)
+            </Typography>
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleCloseDialog}
+            sx={{
+              backgroundColor: "white",
+              fontFamily: "Gralliec",
+              fontSize: "24px",
+              color: "#4cc9f0",
+            }}
+          >
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   );
 }

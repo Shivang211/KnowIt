@@ -1,4 +1,3 @@
-import QuestionTransition from "./QuestionTransition";
 import { QuestionPage } from "../pages/QuestionPage";
 import ScorePage from "../pages/ScorePage";
 import QuestionTransition from "./QuestionTransition";
@@ -33,12 +32,12 @@ const GameView = ({
   playerAnswer,
   setPlayerAnswer,
   gameState,
-  inputResponse
+  inputResponse,
 }: {
   playerAnswer: string;
   setPlayerAnswer: (_: string) => void;
   gameState: any;
-  inputResponse: ({answer}: { answer: string }) => void;
+  inputResponse: ({ answer }: { answer: string }) => void;
 }) => {
   console.log(gameState);
   const socketId = localStorage.getItem("socketId");
@@ -54,15 +53,27 @@ const GameView = ({
       )}
       {questionRoundStatus === "started" && (
         <>
-          <QuestionPage question={gameState.questions[gameState.currentQuestionNo - 1].payload} questionNo={gameState.currentQuestionNo} answer={playerAnswer} setAnswer={setPlayerAnswer} duration={gameState.duration}/>
+          <QuestionPage
+            question={
+              gameState.questions[gameState.currentQuestionNo - 1].payload
+            }
+            questionNo={gameState.currentQuestionNo}
+            answer={playerAnswer}
+            setAnswer={setPlayerAnswer}
+            duration={gameState.duration}
+          />
           {inputResponse({ answer: playerAnswer })}
         </>
       )}
       {questionRoundStatus === "ended" && (
         <>
-        {setPlayerAnswer("")}
-        <ScorePage user1={playerInfo[0].name} user2={playerInfo[1].name} score1={playerInfo[0].score}
-        score2={playerInfo[1].score}/>
+          {setPlayerAnswer("")}
+          <ScorePage
+            user1={playerInfo[0].name}
+            user2={playerInfo[1].name}
+            score1={playerInfo[0].score}
+            score2={playerInfo[1].score}
+          />
         </>
       )}
     </>

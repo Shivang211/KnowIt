@@ -1,7 +1,24 @@
-import { Box, Button, LinearProgress, TextField, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  LinearProgress,
+  TextField,
+  Typography,
+} from "@mui/material";
 
-export function QuestionPage({ question,questionNo, answer, setAnswer, duration }: { question: string; questionNo: string;duration: number; answer: string; setAnswer: (_: string) => void }) {
-
+export function QuestionPage({
+  question,
+  questionNo,
+  answer,
+  setAnswer,
+  duration,
+}: {
+  question: string;
+  questionNo: string;
+  duration: number;
+  answer: string;
+  setAnswer: (_: string) => void;
+}) {
   function handleInputChange(event: { target: { value: any } }) {
     const value = event.target.value;
     setAnswer(value);
@@ -45,7 +62,10 @@ export function QuestionPage({ question,questionNo, answer, setAnswer, duration 
         }}
       />
       <br></br>
-      <LinearProgress sx={{ marginTop: "4rem", marginX: "30%" }} value={duration} />
+      <LinearProgress
+        sx={{ marginTop: "4rem", marginX: "30%" }}
+        value={duration}
+      />
     </Box>
   );
 }

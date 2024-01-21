@@ -95,19 +95,16 @@ io.on("connect", (socket) => {
   });
 
   // Set player's answer
-  socket.on(
-    "player-answer",
-    ({ name, room, questionID, answer }, callback) => {
-      const { game, error } = updatePlayerAnswer({
-        id: socket.id,
-        name,
-        room,
-        questionID,
-        answer
-      });
-      callback({ game, error });
-    },
-  );
+  socket.on("player-answer", ({ name, room, questionID, answer }, callback) => {
+    const { game, error } = updatePlayerAnswer({
+      id: socket.id,
+      name,
+      room,
+      questionID,
+      answer,
+    });
+    callback({ game, error });
+  });
 
   socket.on("disconnect", () => {
     console.log(`${socket.id} disconnected.`);

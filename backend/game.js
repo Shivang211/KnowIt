@@ -161,26 +161,22 @@ export const updatePlayerReadyStatus = ({ id, name, room }) => {
   return { error: "Game not found" };
 };
 
-export const updatePlayerAnswer = ({
-  id,
-  room,
-  questionID,
-  answer,
-}) => {
+export const updatePlayerAnswer = ({ id, room, questionID, answer }) => {
   // Add validation for questionID to check if answer submitted is for current question
   if (games[room] !== undefined) {
     const newPlayersList = [...games[room].players];
     const existingUser = newPlayersList.findIndex((user) => user.id === id);
     if (existingUser !== -1) {
       newPlayersList[existingUser].answers[questionID] = {
-        answer
+        answer,
       };
 
-      // update score 
+      // update score
       const maxPoints = 100;
-      const a = games[room].questions.filter(q => q.id === questionID);
+      const a = games[room].questions.filter((q) => q.id === questionID);
       console.log("AAAAA", a);
-      newPlayersList[existingUser].score += maxPoints * stringSimilarity(a[0].answer, answer);
+      newPlayersList[existingUser].score +=
+        maxPoints * stringSimilarity(a[0].answer, answer);
 
       games[room].players = newPlayersList;
       return { game: games[room] };

@@ -93,7 +93,7 @@ function CategorySelect() {
   return (
     <Container style={containerStyle}>
       <div className="cartoon-container">
-        <Typography
+        <Box
           marginTop={"-10%"}
           sx={{
             fontWeight: "bolder",
@@ -102,10 +102,9 @@ function CategorySelect() {
             display: "flex",
             flexDirection: "row",
             letterSpacing: "0.02em",
-            marginLeft: "15%",
+            fontSize: "150px",
+            justifyContent: "center",
           }}
-          variant={"h1"}
-          gutterBottom
         >
           <div className="k">k</div>
           <div className="h">n</div>
@@ -114,18 +113,18 @@ function CategorySelect() {
           <div className="i">i</div>
           <div className="t">t</div>
           <div className="s">?</div>
-        </Typography>
+        </Box>
         <Typography
-          marginTop={"30%"}
-          sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }}
-          variant={"h4"}
+          marginTop={"20%"}
+          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
+          variant={"h3"}
           gutterBottom
         >
-          Looking good, {localStorage.getItem("username")}
+          Looking good, {localStorage.getItem("username")} !
         </Typography>
         <Typography
-          sx={{ fontWeight: "bolder", fontFamily: "Gralliec" }}
-          variant={"h5"}
+          sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
+          variant={"h4"}
           gutterBottom
         >
           Click and choose a
@@ -159,85 +158,100 @@ function CategorySelect() {
           sx={{
             display: "flex",
             flexDirection: "row",
-            marginTop: "20%",
+            marginTop: "4rem",
             textWrap: "nowrap",
+            justifyContent: "center",
           }}
         >
-          <Box sx={{ marginX: "0.25rem" }}>
-            <Button 
+          <Box>
+            <Button
               onClick={handleMoviesButtonClick}
               sx={{
                 border: "1px solid white",
-                borderRadius: "5px"
+                borderRadius: "5px",
+                marginX: "0.5rem",
               }}
-              >
+            >
               <Typography
                 sx={{
                   fontWeight: "bolder",
                   fontFamily: "Gralliec",
                   color: "white",
                 }}
-                variant={"h4"}
+                variant={"h2"}
               >
                 Movies
               </Typography>
             </Button>
           </Box>
-          <Box sx={{ marginX: "0.25rem" }}>
-            <Button 
+          <Box>
+            <Button
               onClick={handleTvShowsButtonClick}
               sx={{
                 border: "1px solid white",
-                borderRadius: "5px"
+                borderRadius: "5px",
+                marginX: "0.5rem",
               }}
-              >
+            >
               <Typography
                 sx={{
                   fontWeight: "bolder",
                   fontFamily: "Gralliec",
                   color: "white",
                 }}
-                variant={"h4"}
+                variant={"h2"}
               >
                 Shows
               </Typography>
             </Button>
           </Box>
-          <Box sx={{ marginX: "0.25rem" }}>
-            <Button 
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            marginTop: "1rem",
+            textWrap: "nowrap",
+            justifyContent: "center",
+          }}
+        >
+          <Box>
+            <Button
               onClick={handleSportsButtonClick}
               sx={{
                 border: "1px solid white",
-                borderRadius: "5px"
+                borderRadius: "5px",
+                marginX: "0.5rem",
               }}
-              >
+            >
               <Typography
                 sx={{
                   fontWeight: "bolder",
                   fontFamily: "Gralliec",
                   color: "white",
                 }}
-                variant={"h4"}
+                variant={"h2"}
               >
                 Sports
               </Typography>
             </Button>
           </Box>
-          <Box sx={{ marginX: "0.25rem" }}>
-            <Button 
+          <Box>
+            <Button
               onClick={handleGKButtonClick}
               sx={{
                 border: "1px solid white",
-                borderRadius: "5px"
+                borderRadius: "5px",
+                marginX: "0.5rem",
               }}
-              >
+            >
               <Typography
                 sx={{
                   fontWeight: "bolder",
                   fontFamily: "Gralliec",
                   color: "white",
                 }}
-                variant={"h4"}
+                variant={"h2"}
               >
                 GK
               </Typography>
@@ -342,7 +356,11 @@ function CategorySelect() {
               callback={() => handleClick("Batman Trilogy")}
             />
             <CustomButton
-              imageSource="" color="red" content="Marvel" callback={() => handleClick("Marvel")} />
+              imageSource=""
+              color="red"
+              content="Marvel"
+              callback={() => handleClick("Marvel")}
+            />
             <CustomButton
               imageSource=""
               color="#4cc9f0"
@@ -379,7 +397,11 @@ function CategorySelect() {
           </DialogTitle>
           <List>
             <CustomButton
-              imageSource="" color="red" content="SUITS" callback={() => handleClick("SUITS")} />
+              imageSource=""
+              color="red"
+              content="SUITS"
+              callback={() => handleClick("SUITS")}
+            />
             <CustomButton
               imageSource=""
               color="#4cc9f0"
@@ -440,7 +462,11 @@ function CategorySelect() {
           </DialogTitle>
           <List>
             <CustomButton
-              imageSource="" color="red" content="SOCCER" callback={() => handleClick("SOCCER")} />
+              imageSource=""
+              color="red"
+              content="SOCCER"
+              callback={() => handleClick("SOCCER")}
+            />
             <CustomButton
               imageSource=""
               color="#4cc9f0"

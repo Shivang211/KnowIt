@@ -1,21 +1,11 @@
 import { Typography } from "@mui/material";
-import { useEffect, useState } from "react";
 
 const QuestionTransition = ({
   questionNo,
-  duration,
 }: {
   questionNo: number;
-  duration: number;
 }) => {
-  const [timeLeft, setTimeLeft] = useState(duration / 1000);
-
-  useEffect(() => {
-    setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
-  }, []);
-
+ 
   return (
     <>
       <Typography
@@ -28,7 +18,7 @@ const QuestionTransition = ({
         }}
         variant={"h3"}
       >
-        {`Question ${questionNo} starting in ${timeLeft} seconds`}
+        {`Question ${questionNo} starting ...`}
       </Typography>
     </>
   );

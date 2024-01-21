@@ -1,6 +1,7 @@
 import moment from "moment";
-import { stringSimilarity } from "string-similarity-js";
 import { v4 as uuidv4 } from "uuid";
+
+import { diceCoefficient } from "dice-coefficient";
 
 import { getQuestions } from "./services.js";
 
@@ -66,7 +67,7 @@ export const gameLoop = async (
   updateLeaderboardEmitter,
   updateGameStateEmitter,
 ) => {
-  const roundStartTransitionDuration = 3000; // in milliseconds
+  const roundStartTransitionDuration = 2000; // in milliseconds
   const roundEndTransitionDuration = 8000; // in milliseconds
   const roundDuration = 15000; // in milliseconds
   let currentQuestion = games[room].currentQuestionNo;
@@ -174,9 +175,10 @@ export const updatePlayerAnswer = ({ id, room, questionID, answer }) => {
       // update score
       const maxPoints = 100;
       const a = games[room].questions.filter((q) => q.id === questionID);
-      console.log("AAAAA", a);
+      console.log("AAAAA", answer);
+      console.log("BBBB", a[0].answer);
       newPlayersList[existingUser].score +=
-        maxPoints * stringSimilarity(a[0].answer, answer);
+        100 * Math.round(diceCoefficient(a[0].answer.replace(/\s/g, ''), answer.replace(/\s/g, '')));
 
       games[room].players = newPlayersList;
       return { game: games[room] };

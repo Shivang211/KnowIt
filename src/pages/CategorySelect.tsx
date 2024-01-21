@@ -3,8 +3,6 @@ import {
   Button,
   Container,
   Dialog,
-  DialogActions,
-  DialogContent,
   DialogTitle,
   List,
   Typography,
@@ -344,25 +342,25 @@ function CategorySelect() {
           <List>
             {/* Replace these placeholders with actual movie names */}
             <CustomButton
-              imageSource=""
+              imageSource={harryPotterLogo}
               color="red"
               content="Harry Potter"
               callback={() => handleClick("Harry Potter")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={batmanLogo}
               color="#4cc9f0"
               content="Batman Trilogy"
               callback={() => handleClick("Batman Trilogy")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={marvelLogo}
               color="red"
               content="Marvel"
               callback={() => handleClick("Marvel")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={disneyLogo}
               color="#4cc9f0"
               content="Disney"
               callback={() => handleClick("Disney")}
@@ -397,37 +395,37 @@ function CategorySelect() {
           </DialogTitle>
           <List>
             <CustomButton
-              imageSource=""
+              imageSource={suitsLogo}
               color="red"
               content="SUITS"
               callback={() => handleClick("SUITS")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={billionsLogo}
               color="#4cc9f0"
               content="BILLIONS"
               callback={() => handleClick("BILLIONS")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={friendsLogo}
               color="red"
               content="FRIENDS"
               callback={() => handleClick("FRIENDS")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={breakingBadLogo}
               color="#4cc9f0"
               content="BREAKING BAD"
               callback={() => handleClick("BILLIONS")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={gameOfThronesLogo}
               color="red"
               content="GAME OF THRONES"
               callback={() => handleClick("GAME OF THRONES")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={himymLogo}
               color="#4cc9f0"
               content="HOW I MET YOUR MOTHER"
               callback={() => handleClick("HOW I MET YOUR MOTHER")}
@@ -462,25 +460,25 @@ function CategorySelect() {
           </DialogTitle>
           <List>
             <CustomButton
-              imageSource=""
+              imageSource={soccerLogo}
               color="red"
               content="SOCCER"
               callback={() => handleClick("SOCCER")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={cricketLogo}
               color="#4cc9f0"
               content="CRICKET"
               callback={() => handleClick("CRICKET")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={badmintonLogo}
               color="red"
               content="BADMINTON"
               callback={() => handleClick("BADMINTON")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={olympicsLogo}
               color="#4cc9f0"
               content="OLYMPICS"
               callback={() => handleClick("OLYMPICS")}
@@ -515,19 +513,19 @@ function CategorySelect() {
           </DialogTitle>
           <List>
             <CustomButton
-              imageSource=""
+              imageSource={whoAmILogo}
               color="red"
               content="WHO AM I?"
               callback={() => handleClick("WHO AM I?")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={worldHistoryLogo}
               color="#4cc9f0"
               content="WORLD HISTORY"
               callback={() => handleClick("WORLD HISTORY")}
             />
             <CustomButton
-              imageSource=""
+              imageSource={worldMonumentsLogo}
               color="red"
               content="WORLD MONUMENTS"
               callback={() => handleClick("WORLD MONUMENTS")}

@@ -54,6 +54,7 @@ export function GameRoom() {
     socket.on("updateGameState", ({ gameState }) => {
       setGameState(gameState);
       setGameStatus(gameState.status);
+      setPlayerAnswer("");
     });
     socket.on("updateLeaderboard", ({ leaderboard }) => {
       setLeaderboard(leaderboard);
@@ -73,6 +74,7 @@ export function GameRoom() {
   };
 
   const inputResponse = ({ answer }) => {
+    setPlayerAnswer(answer);
     socket.emit(
       "player-answer",
       {

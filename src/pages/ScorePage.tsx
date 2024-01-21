@@ -14,11 +14,13 @@ function ScorePage({
   user2,
   score1,
   score2,
+  answer,
 }: {
   user1: string;
   user2: string;
   score1: number;
   score2: number;
+  answer: string;
 }) {
   const styles = {
     fontSize: "25px",
@@ -31,6 +33,20 @@ function ScorePage({
   return (
     <div style={{ height: "100vh", marginTop: "4rem" }}>
       <Box sx={{ alignContent: "center" }}>
+      <Typography
+          sx={{ fontWeight: "bolder", fontFamily: "Inter", color: "white" }}
+          variant={"h5"}
+          gutterBottom
+        >
+          Answer:
+        </Typography>
+        <Typography
+          sx={{ fontWeight: "bolder", fontFamily: "Inter", color: "orange" }}
+          variant={"h3"}
+          gutterBottom
+        >
+          {answer}
+        </Typography>
         <Typography
           sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
           variant={"h3"}

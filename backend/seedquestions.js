@@ -1172,295 +1172,295 @@ const seedquestions = [
     question:
       "The first Marvel Cinematic Universe (MCU) film, released in 2008, featuring Tony Stark as Iron Man.",
     answer: "What is Iron Man?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The powerful artifact that is central to many Marvel movies, including 'The Avengers' and 'Guardians of the Galaxy.'",
     answer: "What is the Tesseract?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the Norse god Thor wields his enchanted hammer, Mjolnir.",
     answer: "What is Thor?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The group of superheroes who come together to form a team in Marvel's 'The Avengers.'",
     answer: "What is the Avengers?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The main antagonist in 'Black Panther,' ruling the fictional African nation of Wakanda.",
     answer: "Who is Killmonger?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the sorcerer Stephen Strange learns the mystic arts to become the Sorcerer Supreme.",
     answer: "What is Doctor Strange?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The powerful, reality-altering gem featured in Marvel movies, sought after by Thanos.",
     answer: "What is the Reality Stone?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The actor who portrayed the character Deadpool in the Marvel movie 'Deadpool.'",
     answer: "Who is Ryan Reynolds?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where Tony Stark builds a suit of armor to escape captivity and fights against terrorists.",
     answer: "What is Iron Man?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The sentient android created by Tony Stark and Bruce Banner, featured in 'Avengers: Age of Ultron.'",
     answer: "Who is Ultron?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The iconic shield carried by Captain America, made of vibranium, in Marvel movies.",
     answer: "What is the vibranium shield?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the Guardians of the Galaxy team up to protect a powerful orb from falling into the wrong hands.",
     answer: "What is Guardians of the Galaxy?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character who becomes the Winter Soldier in Marvel movies after being presumed dead in World War II.",
     answer: "Who is Bucky Barnes?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The fictional metal alloy that is stronger than adamantium, found in the Black Panther's suit.",
     answer: "What is vibranium?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where Scott Lang takes on the role of Ant-Man, with the ability to shrink in size.",
     answer: "What is Ant-Man?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The powerful villain in 'Avengers: Infinity War' who seeks to collect all six Infinity Stones.",
     answer: "Who is Thanos?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The superhero in Marvel movies who can change size and communicate with ants.",
     answer: "Who is Ant-Man?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero T'Challa returns to Wakanda to take the throne as king.",
     answer: "What is Black Panther?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The organization led by Nick Fury that recruits superheroes in Marvel's 'The Avengers.'",
     answer: "What is S.H.I.E.L.D.?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character in Marvel movies known for his archery skills and wielding a bow and arrow.",
     answer: "Who is Hawkeye?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie that explores the origin of the character Carol Danvers, who becomes Captain Marvel.",
     answer: "What is Captain Marvel?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The powerful alien artifact that serves as the primary focus of 'Avengers: Endgame.'",
     answer: "What is the Quantum Realm?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where Peter Parker receives mentorship from Tony Stark and battles the Vulture.",
     answer: "What is Spider-Man: Homecoming?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The villain in 'Black Panther' who challenges T'Challa for the throne of Wakanda.",
     answer: "Who is Erik Killmonger?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The actor who plays Tony Stark/Iron Man in the Marvel Cinematic Universe.",
     answer: "Who is Robert Downey Jr.?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Peter Quill, also known as Star-Lord, forms the Guardians of the Galaxy.",
     answer: "What is Guardians of the Galaxy?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The superhero in Marvel movies who possesses super strength, enhanced agility, and a vibranium shield.",
     answer: "Who is Captain America?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where Doctor Strange faces the interdimensional entity known as Dormammu.",
     answer: "What is Doctor Strange?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character in Marvel movies who is the Norse god of mischief and brother to Thor.",
     answer: "Who is Loki?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero T'Challa defends his throne and country from various adversaries.",
     answer: "What is Black Panther?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The artifact that houses the Mind Stone and grants superhuman abilities to certain characters in Marvel movies.",
     answer: "What is the Scepter?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character in Marvel movies who is a brilliant scientist, billionaire, and philanthropist, also known as Iron Man.",
     answer: "Who is Tony Stark?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Scott Lang, also known as Ant-Man, teams up with the Wasp.",
     answer: "What is Ant-Man and The Wasp?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie that explores the backstory of Natasha Romanoff, also known as Black Widow.",
     answer: "What is Black Widow?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The extraterrestrial race featured in 'Guardians of the Galaxy' known for their literal interpretations.",
     answer: "What are the Kree?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character in Marvel movies who is a skilled marksman with exceptional accuracy and vision.",
     answer: "Who is Hawkeye?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Peter Quill, also known as Star-Lord, searches for his missing father.",
     answer: "What is Guardians of the Galaxy Vol. 2?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The villain in 'Avengers: Infinity War' who seeks to collect all the Infinity Stones.",
     answer: "Who is Thanos?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Carol Danvers, known as Captain Marvel, helps the Avengers in the fight against Thanos.",
     answer: "What is Avengers: Endgame?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Peter Parker faces off against Mysterio, an illusionist and master of deception.",
     answer: "What is Spider-Man: Far From Home?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character in Marvel movies who is a genetically enhanced super-soldier and leader of the Avengers.",
     answer: "Who is Captain America?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The organization in Marvel movies responsible for creating and enhancing superhumans, including Scarlet Witch and Quicksilver.",
     answer: "What is HYDRA?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Peter Quill discovers his true heritage and encounters his father, Ego.",
     answer: "What is Guardians of the Galaxy Vol. 2?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The artifact that houses the Space Stone and allows characters to travel instantly across the universe in Marvel movies.",
     answer: "What is the Tesseract?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Scott Lang, also known as Ant-Man, joins the Avengers in the fight against Thanos.",
     answer: "What is Avengers: Endgame?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character in Marvel movies who is the Norse god of thunder and wields the enchanted hammer, Mjolnir.",
     answer: "Who is Thor?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The powerful artifact featured in 'Guardians of the Galaxy' that contains an Infinity Stone.",
     answer: "What is the Orb?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The Marvel movie where the hero Peter Parker is mentored by Tony Stark and faces the Vulture as the main antagonist.",
     answer: "What is Spider-Man: Homecoming?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:
       "The character in Marvel movies who is a genius billionaire, inventor, and philanthropist, known for his suits of powered armor.",
     answer: "Who is Tony Stark?",
-    topic: "Marvel Movies",
+    topic: "Marvel",
   },
   {
     question:

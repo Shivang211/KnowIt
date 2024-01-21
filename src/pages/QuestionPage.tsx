@@ -1,14 +1,21 @@
-import { Box, Button, TextField, Typography } from "@mui/material";
-import { useState } from "react";
+import {
+  Box,
+  Button,
+  LinearProgress,
+  TextField,
+  Typography,
+} from "@mui/material";
 
 export function QuestionPage({
   question,
   questionNo,
   answer,
   setAnswer,
+  duration,
 }: {
   question: string;
   questionNo: string;
+  duration: number;
   answer: string;
   setAnswer: (_: string) => void;
 }) {
@@ -17,9 +24,8 @@ export function QuestionPage({
     setAnswer(value);
   }
 
-  function handleSubmit() {}
   return (
-    <Box style={{ height: "100vh" }}>
+    <Box style={{ height: "100vh", marginTop: "4rem" }}>
       <Box sx={{ alignContent: "center" }}>
         <Typography
           sx={{ fontWeight: "bolder", fontFamily: "Gralliec", color: "white" }}
@@ -54,6 +60,11 @@ export function QuestionPage({
           marginTop: "5%",
           border: "rounded",
         }}
+      />
+      <br></br>
+      <LinearProgress
+        sx={{ marginTop: "4rem", marginX: "30%" }}
+        value={duration}
       />
     </Box>
   );

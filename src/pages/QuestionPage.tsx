@@ -1,10 +1,14 @@
 import {
   Box,
-  Button,
   LinearProgress,
   TextField,
   Typography,
+  Button
 } from "@mui/material";
+
+import Timer from "../components/Timer";
+
+import { useState } from "react";
 
 export function QuestionPage({
   question,
@@ -12,17 +16,21 @@ export function QuestionPage({
   answer,
   setAnswer,
   duration,
+  inputResponse,
 }: {
   question: string;
   questionNo: string;
   duration: number;
   answer: string;
   setAnswer: (_: string) => void;
+  inputResponse: ({ answer }: { answer: string }) => void;
 }) {
   function handleInputChange(event: { target: { value: any } }) {
     const value = event.target.value;
     setAnswer(value);
   }
+
+  const [number, setNumber] = useState(0);
 
   return (
     <Box style={{ height: "100vh", marginTop: "4rem" }}>
@@ -62,10 +70,29 @@ export function QuestionPage({
         }}
       />
       <br></br>
+      <Button
+        onClick={() => {
+          inputResponse({ answer });
+          setNumber(1);
+        }}
+        sx={{
+          backgroundColor: "white",
+          fontFamily: "Gralliec",
+          fontSize: "24px",
+          color: "black",
+          marginTop: "2rem",
+        }}
+        disabled={number > 0}
+      >
+        Submit
+      </Button>
+      <br></br>
       <LinearProgress
         sx={{ marginTop: "4rem", marginX: "30%" }}
         value={duration}
       />
+      <br></br>
+      <Timer duration={15000} />
     </Box>
   );
 }

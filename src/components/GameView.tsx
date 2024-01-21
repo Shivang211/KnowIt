@@ -2,6 +2,8 @@ import { QuestionPage } from "../pages/QuestionPage";
 import ScorePage from "../pages/ScorePage";
 import QuestionTransition from "./QuestionTransition";
 
+import Timer from "../components/Timer";
+
 interface Player {
   id: string;
   answers: string[];
@@ -48,7 +50,6 @@ const GameView = ({
       {questionRoundStatus === "pending" && (
         <QuestionTransition
           questionNo={gameState.currentQuestionNo}
-          duration={gameState.duration}
         />
       )}
       {questionRoundStatus === "started" && (
@@ -61,18 +62,19 @@ const GameView = ({
             answer={playerAnswer}
             setAnswer={setPlayerAnswer}
             duration={gameState.duration}
+            inputResponse={inputResponse}
           />
-          {inputResponse({ answer: playerAnswer })}
+          {/* {inputResponse({ answer: playerAnswer })} */}
         </>
       )}
       {questionRoundStatus === "ended" && (
         <>
-          {setPlayerAnswer("")}
           <ScorePage
             user1={playerInfo[0].name}
             user2={playerInfo[1].name}
             score1={playerInfo[0].score}
             score2={playerInfo[1].score}
+            answer={gameState.questions[gameState.currentQuestionNo - 1].answer}
           />
         </>
       )}

@@ -7,7 +7,7 @@ const Timer = ({ duration }: { duration: number }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setTimeLeft((prev) => {
-        return prev;
+        return prev - 1;
       });
     }, 1000);
     return () => {
@@ -16,11 +16,20 @@ const Timer = ({ duration }: { duration: number }) => {
   }, []);
 
   return (
-    <Stack direction={"row"} spacing={"1rem"} alignItems="center">
+    <>
       {/* { TODO: Do linear progress element using timeLeft and duration numbers } */}
-      <CircularProgress />
-      <Typography sx={{ width: "5rem" }}>{`${timeLeft} s`}</Typography>
-    </Stack>
+      <Typography
+        sx={{
+            fontWeight: "bolder",
+            fontFamily: "Gralliec",
+            letterSpacing: "0.1rem",
+            color: "white"
+        }}
+        variant={"h3"}
+        >
+        {`${timeLeft} s`}
+        </Typography>
+        </>
   );
 };
 

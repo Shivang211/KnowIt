@@ -64,7 +64,6 @@ const GameView = ({
             duration={gameState.duration}
             inputResponse={inputResponse}
           />
-          <Timer duration={gameState.duration} />
           {/* {inputResponse({ answer: playerAnswer })} */}
         </>
       )}

@@ -92,6 +92,7 @@ export function QuestionPage({
         value={duration}
       />
       <br></br>
+      <Timer duration={15000} />
     </Box>
   );
 }

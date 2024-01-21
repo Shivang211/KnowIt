@@ -26,7 +26,7 @@ export function GameRoom() {
   const name = localStorage.getItem("username");
   const topic = localStorage.getItem("topic");
 
-  const ENDPOINT = "http://localhost:8000";
+  const ENDPOINT = "https://knowit-backend-82tg.onrender.com";
 
   useEffect(() => {
     socket = io(ENDPOINT);

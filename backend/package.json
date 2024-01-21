@@ -4,7 +4,8 @@
   "description": "Backend for Know It!",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "npm install; npm run build"
   },
   "author": "",
   "license": "ISC",

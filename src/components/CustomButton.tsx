@@ -1,29 +1,44 @@
-import { ListItem, ListItemButton, Typography } from "@mui/material";
+import {
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Typography,
+} from "@mui/material";
 
 export function CustomButton({
   color,
   content,
+  imageSource,
   callback,
 }: {
   color: string;
   content: string;
   callback: () => void;
+  imageSource: string;
 }) {
   return (
-    <ListItem>
+    <ListItem disablePadding>
       <ListItemButton onClick={callback}>
-        <Typography
+        <img src={imageSource} width="50" height="50" />
+        <ListItemText
           sx={{
-            fontWeight: "bolder",
-            fontFamily: "Gralliec",
-            color: { color },
-            marginLeft: "0%",
+            ml: 2,
           }}
-          variant={"h4"}
-          gutterBottom
-        >
-          {content}
-        </Typography>
+          primary={
+            <Typography
+              sx={{
+                fontWeight: "bolder",
+                fontFamily: "Gralliec",
+                color: { color },
+                marginLeft: "10%",
+              }}
+              variant={"h4"}
+              gutterBottom
+            >
+              {content}
+            </Typography>
+          }
+        />
       </ListItemButton>
     </ListItem>
   );
